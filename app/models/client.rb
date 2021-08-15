@@ -9,4 +9,8 @@ class Client < ApplicationRecord
     "退会": 1,
   } 
   
+  has_many :cart_items,dependent: :destroy
+  has_many :orders,dependent: :destroy
+  has_many :adresses,dependent: :destroy
+  
 end
