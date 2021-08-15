@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # root to: 'homes#top'
-  # get 'home/about' => 'homes#about'
+  root to: 'homes#top'
+  get 'home/about' => 'homes#about'
   devise_for :clients
   devise_for :admin
 
@@ -11,21 +11,18 @@ Rails.application.routes.draw do
     resources :orders,only: [:index,:show,:update]
   end
 
-  resources :clients,only: [:show,:edit,:update] do
+  resources :clients,only: [:show,:edit,:update]
   get "clients//:id" => "clients#check"
   get "clients/:id" => "clients#out"
-  end
 
   resources :items,only: [:index,:show]
 
-  resources :cart_items,only: [:index,:update,:create,:destroy] do
+  resources :cart_items,only: [:index,:update,:create,:destroy]
   delete "cart_items" => "cart_items#destroy_all"
-  end
 
-  resources :orders,only: [:new,:index,:create,:show] do
+  resources :orders,only: [:new,:index,:create,:show]
   get "orders" => "orders#check"
   get "orders" => "orders#thanks"
-  end
 
   resources :adresses,only: [:index,:update,:create,:destroy,:edit]
 
