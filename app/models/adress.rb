@@ -5,5 +5,5 @@ class Adress < ApplicationRecord
     "売り切れ": 1
   }
 
-  belouns_to :client
+  belongs_to :client
 end
