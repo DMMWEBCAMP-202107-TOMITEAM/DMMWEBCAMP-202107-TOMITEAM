@@ -1,6 +1,6 @@
 class Client::ClientsController < ApplicationController
   def show
-    @client = Client.find(params[:id])
+    # @client = Client.find(params[:id])
   end
 
   def edit
