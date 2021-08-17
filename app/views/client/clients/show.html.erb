@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>マイページ</h1>
+  <div class="row">
+    <div class="col">登録情報</div>
+    <div class="col"><%= link_to ' 編集する',edit_client_path%></div>
+  </div>
+
+  <table class='table'>
+    <tr>
+	    <th>氏名</th>
+	    <th><%= @client.last_name %> <%= @client.first_name %></th>
+    </tr>
+    <tr>
+	    <th>カナ</th>
+	    <th><%= @client.kana_last_name %> <%= @client.kana_first_name %></th>
+    </tr>
+    <tr>
+      <th>郵便番号</th>
+      <th><%= @client.postal_code %></th>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <th><%= @client.address %></th>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <th><%= @client.telephone_number %></th>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <th><%= @client.email %></th>
+    </tr>
+  </table>
+  <div class="row">
+    <div class="col">配送先</div>
+    <div class="col"><%= link_to ' 一覧を見る',adresses_path%></div>
+  </div>
+  <div class="row">
+    <div class="col">注文履歴</div>
+    <div class="col"><%= link_to ' 一覧を見る',orders_path%></div>
+  </div>
+</div>

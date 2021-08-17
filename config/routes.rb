@@ -16,17 +16,19 @@ Rails.application.routes.draw do
 
   namespace :admin do
 
+    get "top" => "orders#index"
+
     resources :items
     resources :genres,only: [:index,:create,:edit,:update]
     resources :clients,only: [:index,:show,:edit,:update]
     resources :orders,only: [:index,:show,:update]
   end
 
-  scope :client do
-
+  scope module: "client" do
     resources :clients,only: [:show,:edit,:update]
     get "clients//:id" => "clients#check"
-    get "clients//:id" => "clients#out"
+    patch "clients/:id" => "clients#out"
+
 
     resources :items,only: [:index,:show]
 

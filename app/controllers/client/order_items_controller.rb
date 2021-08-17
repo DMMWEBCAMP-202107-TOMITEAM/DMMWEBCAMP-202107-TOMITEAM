@@ -1,2 +1,2 @@
-class OrderItemsController < ApplicationController
+class Client::OrderItemsController < ApplicationController
 end
