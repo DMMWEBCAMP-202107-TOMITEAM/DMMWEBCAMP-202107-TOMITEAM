@@ -1,2 +1,2 @@
-class CartItemsController < ApplicationController
+class Client::CartItemsController < ApplicationController
 end

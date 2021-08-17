@@ -21,10 +21,10 @@ Rails.application.routes.draw do
     resources :orders,only: [:index,:show,:update]
   end
 
-  scope :client do
+  scope module: "client" do
     resources :clients,only: [:show,:edit,:update]
     get "clients//:id" => "clients#check"
-    get "clients/:id" => "clients#out"
+    patch "clients/:id" => "clients#out"
 
     resources :items,only: [:index,:show]
 
