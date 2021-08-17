@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
+
     resources :items
     resources :genres,only: [:index,:create,:edit,:update]
     resources :clients,only: [:index,:show,:edit,:update]
@@ -22,9 +23,10 @@ Rails.application.routes.draw do
   end
 
   scope :client do
+
     resources :clients,only: [:show,:edit,:update]
     get "clients//:id" => "clients#check"
-    get "clients/:id" => "clients#out"
+    get "clients//:id" => "clients#out"
 
     resources :items,only: [:index,:show]
 
