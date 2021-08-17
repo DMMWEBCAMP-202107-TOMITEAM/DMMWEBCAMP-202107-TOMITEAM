@@ -34,7 +34,7 @@ class DeviseCreateClients < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
       
       t.string :last_name
-      t.string :first_neme
+      t.string :first_name
       t.string :kana_last_name
       t.string :kana_first_name
       t.string :postal_code
