@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
 
-  eunm production_status:{
+  enum sale_status:{
     "販売中": 0,
     "売り切れ": 1
   }
