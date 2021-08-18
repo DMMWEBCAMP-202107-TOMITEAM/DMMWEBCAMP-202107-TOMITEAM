@@ -1,0 +1,58 @@
+<div class='container'>
+  <div class='row'>
+
+    <h2>商品新規登録</h2>
+    <%= form_with model:@item, local:true do |f| %>
+    </div>
+
+
+     <div class="col-2">
+      <div class="form-group">
+        <%= f.label :商品画像 %>
+        <%= f.text_field :image, class: "" %>選択されていません
+      </div>
+
+
+      <div class="form-group">
+        <%= f.label :商品名 %>
+        <%= f.text_field :name, class: "" %>
+      </div>
+
+
+      <div class="form-group">
+        <%= f.label :商品説明 %>
+        <%= f.text_area :introduction, class: "" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :ジャンル %>
+        <%= f.text_field :genre, class: "" %>
+      </div>
+
+
+      <div class="form-group">
+        <%= f.label :税抜価格 %>
+        <%= f.text_field :tax_out_price, class: "" %>円
+      </div>
+
+      <div class="form-group">
+        <%= f.label :"販売ステータス", class: "control-label" %>
+        <%= f.select :is_sale, [['販売中', true], ['販売停止', false]], prompt: "-- 選択してください --", class: "is_sale" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "新規登録", class: "btn btn-primary btn-lg pull-right" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
