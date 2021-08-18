@@ -25,9 +25,12 @@ Rails.application.routes.draw do
   end
 
   scope module: "client" do
-    resources :clients,only: [:show,:edit,:update]
-    get "clients//:id" => "clients#check"
-    patch "clients/:id" => "clients#out"
+    resources :clients,only: [:show] do
+      collection do
+        get :check
+        patch :out
+      end
+    end
 
 
     resources :items,only: [:index,:show]
