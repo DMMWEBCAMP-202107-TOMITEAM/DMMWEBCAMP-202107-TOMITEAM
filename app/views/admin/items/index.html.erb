@@ -1,0 +1,32 @@
+<h3>商品一覧</h3>
+
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th></th>
+      <th><h4>商品ID</h4></th>
+      <th><h4>商品名</h4></th>
+      <th><h4>税込価格</h4></th>
+      <th><h4>ジャンル</h4></th>
+      <th><h4>ステータス</h4></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+    <tr>
+       <%= item.id %>
+    <td><%= link_to admin_item_path(item) do %>
+         <%= item.name %>
+    <% end %>
+    </td>
+    <td>
+     <%= item.tax_out_price.to_s(:delimited) %>
+    </td>
+    <td>
+     <%= item.genre.name %>
+     </td>
+    <% end %>
+  </tbody>
+</table>
+
+
