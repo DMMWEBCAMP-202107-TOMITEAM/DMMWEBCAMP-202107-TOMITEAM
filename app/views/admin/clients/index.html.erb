@@ -1,1 +1,37 @@
 <h1>管理者側顧客一覧</h1>
+<div class="container">
+ <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <h2>会員一覧</h2>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>メールアドレス</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @clients.each do |client| %>
+            <tr>
+              <td><%= client.id %></td>
+              <td><%= link_to client.last_name + " " + client.first_name,admin_client_path(client) %></td>
+              <td><%= client.email %></td>
+              <td>
+                <% if client.client_status == false %>
+                有効
+                <% else %>
+                退会
+                <% end %>
+              </td>
+            </tr>
+            <% end %>
+
+        </tbody>
+      </table>
+    </div>
+   </div>
+  </div>

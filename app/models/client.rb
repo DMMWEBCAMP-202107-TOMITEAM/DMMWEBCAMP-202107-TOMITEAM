@@ -12,4 +12,9 @@ class Client < ApplicationRecord
     super && (self.client_status == false)
   end
 
+# 退会機能
+    def active_for_authentication?
+      super && (self.is_client_status == false)
+    end
+
 end
