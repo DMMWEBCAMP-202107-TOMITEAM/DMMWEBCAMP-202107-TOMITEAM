@@ -6,27 +6,27 @@
         <ul class="navbar-nav ml-auto">
           <!--顧客がログインしている時-->
         <% if client_signed_in? %>
-          <li><%= link_to ' マイページ',clients_my_page_path(current_client),class: 'nav-link text-body border m-3' %></li>
-          <li><%= link_to ' 商品一覧',items_path,class: 'nav-link text-body m-3' %></li>
-          <li><%= link_to ' カート',cart_items_path,class: 'nav-link text-body m-3'%></li>
-          <li><%= link_to ' ログアウト', destroy_client_session_path, method: :delete,class: 'nav-link text-body m-3' %></li>
+          <li><%= link_to ' マイページ',clients_my_page_path(current_client),class: 'nav-link text-body m-3 btn btn-info' %></li>
+          <li><%= link_to ' 商品一覧',items_path,class: 'nav-link text-body m-3 btn btn-info' %></li>
+          <li><%= link_to ' カート',cart_items_path,class: 'nav-link text-body m-3 btn btn-info'%></li>
+          <li><%= link_to ' ログアウト', destroy_client_session_path, method: :delete,class: 'nav-link text-body m-3 btn btn-info' %></li>
 
           <!--管理者がログインしている時-->
         <% elsif admin_signed_in? %>
-          <li><%= link_to "商品一覧", admin_items_path, class: 'nav-link text-body border m-3' %></li>
-          <li><%= link_to "会員一覧", admin_clients_path, class: 'nav-link text-body border m-3' %></li>
-          <li><%= link_to "注文履歴一覧", admin_orders_path, class: 'nav-link text-body border m-3' %></li>
-          <li><%= link_to "ジャンル一覧", admin_genres_path,  class: 'nav-link text-body border m-3' %></li>
-          <li><%= link_to ' ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-body border m-3' %></li>
+          <li><%= link_to "商品一覧", admin_items_path, class: 'nav-link text-body border m-3 btn btn-info' %></li>
+          <li><%= link_to "会員一覧", admin_clients_path, class: 'nav-link text-body border m-3 btn btn-info' %></li>
+          <li><%= link_to "注文履歴一覧", admin_orders_path, class: 'nav-link text-body border m-3 btn btn-info' %></li>
+          <li><%= link_to "ジャンル一覧", admin_genres_path,  class: 'nav-link text-body border m-3 btn btn-info' %></li>
+          <li><%= link_to ' ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-body border m-3 btn btn-info' %></li>
 
 
 
           <!--ログインしていない時-->
         <% else %>
-          <li><%= link_to ' About',home_about_path,class: 'nav-link text-body border m-3' %></li>
-          <li><%= link_to ' 商品一覧',items_path,class: 'nav-link text-body border m-3' %></li>
-          <li><%= link_to ' 新規登録', new_client_registration_path,class: 'nav-link text-body border m-3' %></li>
-          <li><%= link_to ' ログイン', new_client_session_path ,class: 'nav-link text-body border m-3'%></li>
+          <li><%= link_to ' About',home_about_path,class: 'nav-link text-body border m-3 btn btn-info' %></li>
+          <li><%= link_to ' 商品一覧',items_path,class: 'nav-link text-body border m-3 btn btn-info' %></li>
+          <li><%= link_to ' 新規登録', new_client_registration_path,class: 'nav-link text-body border m-3 btn btn-info' %></li>
+          <li><%= link_to ' ログイン', new_client_session_path ,class: 'nav-link text-body border m-3 btn btn-info'%></li>
         <% end %>
         </ul>
       </div>
