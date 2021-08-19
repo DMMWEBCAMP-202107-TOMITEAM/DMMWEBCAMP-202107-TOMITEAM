@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
 
 
-  attachment :image
+  attachment :image_id
 
 
   has_many :cart_items, dependent: :destroy
