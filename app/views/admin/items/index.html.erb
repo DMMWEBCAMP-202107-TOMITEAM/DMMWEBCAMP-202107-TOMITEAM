@@ -1,32 +1,47 @@
-<h3>商品一覧</h3>
-
-<table class='table table-hover table-inverse'>
-  <thead>
-    <tr>
-      <th></th>
-      <th><h4>商品ID</h4></th>
-      <th><h4>商品名</h4></th>
-      <th><h4>税込価格</h4></th>
-      <th><h4>ジャンル</h4></th>
-      <th><h4>ステータス</h4></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @items.each do |item| %>
-    <tr>
-       <%= item.id %>
-    <td><%= link_to admin_item_path(item) do %>
-         <%= item.name %>
-    <% end %>
-    </td>
-    <td>
-     <%= item.tax_out_price.to_s(:delimited) %>
-    </td>
-    <td>
-     <%= item.genre.name %>
-     </td>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+ <div class="row">
+  <h4>商品一覧</h4>
+    <div class="col-12">
+     <table class="table">
+      <thead>
+        <tr class="info">
+          <th>商品ID</th>
+          <th>商品名</th>
+          <th>税抜価格</th>
+          <th>ジャンル</th>
+          <th>ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+				<% @items.each do |item| %>
+  				<tr>
+            <td class="col-２">
+              <%= item.id %>
+            </td>
+            <td class="col-２">
+              <%= link_to admin_item_path(item), class: "btn-link" do %>
+                <%= item.name %>
+              <% end %>
+            </td>
+            <td class="col-２">
+              <%= item.price.to_s(:delimited) %>
+            </td>
+            <td class="col-２">
+              <%= item.genre.name %>
+            </td>
+            <td class="col-２">
+              <% if item.sale_status == true %>
+      					<p><i class="fas fa-bullseye red"></i>販売中</p>
+      				<% elsif item.sale_status == false %>
+      					<p><i class="fas fa-bullseye blue"></i>販売停止中</p>
+      				<% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+ <div class="text-center"><%= paginate(@items) %></div>
+</div>
 
 

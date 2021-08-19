@@ -1,0 +1,36 @@
+<div class='container'>
+  <h2>ジャンル一覧・追加</h2>
+    <div class='row'>
+     <div class="col-6">
+      <div class="form-group col-10">
+        <%= form_with model:@genre, url: '/admin/genres', local:true do |f| %>
+        <%= f.label :ジャンル名 %>
+        <%= f.text_field :name,class: "col-md-4" %>
+        <%= f.submit "新規登録", class: "glyphicon glyphicon-pencil btn btn-success pull-right" %>
+        <% end %>
+
+
+       <table class="table genre-index">
+        <thead>
+          <tr>
+            <th>ジャンル</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @genres.each do |genre| %>
+            <tr>
+              <td><%= genre.name %></td>
+　　　　　　　 <td><%= link_to "編集する",edit_admin_genre_path(genre),class: "glyphicon glyphicon-pencil btn btn-success pull-right" %></td>
+            </tr>
+          <% end %>
+         </tbody>
+        </table>
+    </div>
+   </div>
+  </div>
+</div>
+
+
+
+
