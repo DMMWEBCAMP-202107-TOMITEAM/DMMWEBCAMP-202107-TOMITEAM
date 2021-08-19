@@ -1,0 +1,15 @@
+        <div class='container'>
+          <h2>商品編集</h2>
+            <div class='row'>
+              <%= form_with model:@item, url: '/admin/items', local:true do |f| %>
+               <div class=col-6>
+                 <div class="img_field">
+                  <%= f.label :商品画像,class: "control-label"  %>
+                  <%=f.attachment_field :image %>
+                  </div>
+
+
+                  <% end %>
+             </div>
+           </div>
+        </div>
