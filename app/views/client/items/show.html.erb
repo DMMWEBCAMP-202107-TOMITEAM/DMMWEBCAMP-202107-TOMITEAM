@@ -1,20 +1,23 @@
-<div class="container">
-  <% @item.each do |item| %>
+<div class="m-5">
+  <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <%= link_to item_path(item) do %>
-          <%= attachment_image_tag(item, :image_id, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
+      <div class="col-md-4">
+        <%= render 'homes/genre'%>
+      </div>
+      <div class="col-md-4">
+        <%= link_to item_path(@item) do %>
+          <%= attachment_image_tag(@item, :image_id, :fill, 100, 100, fallback: "no_image.jpg") %>
         <% end %>
       </div>
-      <div class="col-md-6">
-        <h1><%= item.name %></h1>
-        <%= item.introduction %>
-        <%= item.price %>
-        <%=form_for cart, url:"//#{cart.item_id}", method: :post do |f|%>
-          <%= f.select :quantity, options_for_select(@numbers, {selected: cart.quantity.to_i} )%>
-          <%= f.submit "数量の変更を確定"%>
+      <div class="col-md-4">
+        <h1><%= @item.name %></h1>
+        <%= @item.introduction %><br>
+        <div class="m-5">￥<%= @item.price %>(税込)</div>
+        <%= form_with model: @item do |f| %>
+         <%= f.select :faculty, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"],["5", "5"],["6", "6"],["7", "7"],["8", "8"],["9", "9"],["10", "10"]], include_blank: "選択して下さい" %>
+         <%= f.submit 'カートに入れる'%>
         <% end %>
       </div>
     </div>
-  <% end %>
+  </div>
 </div>
