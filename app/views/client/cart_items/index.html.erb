@@ -5,8 +5,7 @@
         <br></br>
         <h2>ショッピングカート</h2>
         <br></br>
-        <div> <%= link_to "カートを空にする", cart_items_path(@cart_items), method: :delete, class:"btn btn-danger" %></div>
-        <!--destory_allへのパスを追加しないといけない-->
+        <div> <%= link_to "カートを空にする", cart_items_all_path(@cart_items), method: :delete, class:"btn btn-danger" %> </div>
       </div>
     </div>
 
