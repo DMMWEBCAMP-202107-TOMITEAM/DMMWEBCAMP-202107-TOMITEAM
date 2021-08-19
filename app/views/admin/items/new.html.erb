@@ -1,7 +1,7 @@
         <div class='container'>
           <h2 class="head-line">商品新規登録</h2>
             <div class='row'>
-              <%= form_with model:@item, url: '/admin/items', local:true do |f| %>
+              <%= form_with model: @item, url: '/admin/items', local:true do |f| %>
                <div class=col-6>
                  <div class="img_field">
                   <%= f.label :商品画像,class: "control-label"  %>
