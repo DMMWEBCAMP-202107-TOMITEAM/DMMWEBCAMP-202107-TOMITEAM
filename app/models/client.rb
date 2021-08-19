@@ -7,14 +7,10 @@ class Client < ApplicationRecord
   has_many :cart_items, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :adresses, dependent: :destroy
-  
-  def active_for_authentication?
-    super && (self.client_status == false)
-  end
 
 # 退会機能
     def active_for_authentication?
-      super && (self.is_client_status == false)
+      super && (self.client_status == false)
     end
 
 end
