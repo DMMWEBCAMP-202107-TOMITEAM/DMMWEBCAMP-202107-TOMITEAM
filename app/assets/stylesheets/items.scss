@@ -1,3 +1,22 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+form {
+  background-color: #eaeaea;
+  padding: 30px 40px;
+}
+
+
+dl dt{
+  width: 165px;
+  padding:10px 0;
+  float:left;
+  clear:both;
+}
+
+dl dd{
+  padding:10px 0;
+}
