@@ -39,8 +39,8 @@ Rails.application.routes.draw do
       delete "destroy_all"
     end
 
-    resources :orders,only: [:index,:create,:show]
-    get "orders/new" => "orders#new"
+    resources :orders,only: [:new,:index,:create,:show]
+    # get "orders/new" => "orders#new"
     post "orders/check" => "orders#check"
     get "thanks" => "orders#thanks"
 

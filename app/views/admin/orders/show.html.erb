@@ -1,13 +1,8 @@
-<h1>管理者用顧客注文履歴詳細ページ（show）</h1>
-
 <div class="container">
-
-<div class="col-xs-10 col-xs-offset-1">
   <div class="row">
-      <h2>注文明細</h2>
+   <h2>注文明細</h2>
+    <div class="col-12">
 
-
-  <div class="col-xs-7">
     <table class="table">
       <tbody>
       <tr>
@@ -57,10 +52,12 @@
         <tbody>
       <% @order_items.each do |order_item| %>
           <tr>
+
             <td><%= order_item.item.name %></td>
             <td><%= (order_item.price).floor.to_s(:delimited, delimiter: ',') %></td>
             <td><%= order_item.amount %></td>
             <td><%= (order_item.price * order_item.amount).floor.to_s(:delimited, delimiter: ',') %></td>
+
             <td>
               <%= form_for (order_item), url:admin_order_item_path(order_item) do |f|  %>
               <%= f.select :making_status, OrderItem.making_statuses %>
@@ -97,5 +94,5 @@
       </table>
      </div>
     </div>
-   </div>
-  </div>
+
+</div>

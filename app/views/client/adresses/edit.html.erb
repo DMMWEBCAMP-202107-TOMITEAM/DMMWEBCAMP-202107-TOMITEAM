@@ -4,14 +4,14 @@
   <h2>配送先住所編集</h2>
   <br></br>
   <br>
-    <%= form_with model: @adress, method: :patch, local:true do |f| %>
+    <%= form_with model: @address, method: :patch, local:true do |f| %>
       <div class="field">
         <%= f.label "郵便番号(ハイフンなし)" %><br>
         <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
       </div><br>
       <div class="field">
         <%= f.label :住所 %><br />
-        <%= f.text_field :adress, autofocus: true, autocomplete: "adress", :size=>"60" %>
+        <%= f.text_field :address, autofocus: true, autocomplete: "address", :size=>"60" %>
       </div><br>
       <div class="field">
         <%= f.label :宛名 %><br />

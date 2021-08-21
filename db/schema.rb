@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_08_15_060839) do
     t.integer "client_id"
     t.string "name"
     t.string "postal_code"
-    t.string "adress"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

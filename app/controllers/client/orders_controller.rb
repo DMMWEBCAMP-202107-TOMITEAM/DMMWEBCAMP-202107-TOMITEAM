@@ -1,30 +1,37 @@
 class Client::OrdersController < ApplicationController
   def new
     @order = Order.new
-    @cart_items = CartItem.where(client_id:[current_client.id])
-    @adresses = Adresses.where(client_id:[current_client.id])
+    @client = Client.find(current_client.id)
+    @shipping_addresses = @client.adresses
+    # @cart_items = CartItem.where(client_id:[current_client.id])
+    # @adresses = Adress.where(client_id:[current_client.id])
   end
-  
+
   def index
     @orders = current_client.orders.all
   end
-  
+
   def show
-    @order = Order.find(params[:id])
-    @order_items = @order.order_items.all
-    
+    # @order = Order.find(params[:id])
+    # @order_items = @order.order_items.all
+
     #下3行は商品合計を出すため
-    @sum = 0
-    @subtotals = @order_items.map { |order_item| order_item.price * order_item.amount }
-    @sum = @subtotals.sum
+    # @sum = 0
+    # @subtotals = @order_items.map { |order_item| order_item.price * order_item.amount }
+    # @sum = @subtotals.sum
   end
-  
+
   def check
-    @cart_items = CartItem.where(client_id:[current_client.id])
-    @order = Order.new
+    @cart_items = current_client.cart_items.all
+    # @cart_items = CartItem.where(client_id:[current_client.id])
+    @order = Order.new(
+      address: session[:address],
+      postal_code: session[:postal_code],
+      name: session[:name],
+    )
     @shipping_cost = 800
   end
-  
+
   def create
     @cart_items = CartItem.where(client_id:[current_client.id])
     @order = Order.new
@@ -47,12 +54,12 @@ class Client::OrdersController < ApplicationController
       end
     end
   end
-  
+
   def thanks
   end
-  
+
   private
-  
+
    def order_params
       params.require(:order).permit(:client_id, :postal_code, :address, :payment_method, :order_status, :shipping_cost, :total_payment)
    end
@@ -63,5 +70,5 @@ class Client::OrdersController < ApplicationController
          redirect_to root_path
       end
    end
-  
+
 end

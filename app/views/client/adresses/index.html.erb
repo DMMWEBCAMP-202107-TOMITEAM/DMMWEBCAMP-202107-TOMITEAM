@@ -1,9 +1,10 @@
   <div class="container">
+    
 
     <br></br>
   	<h2>配送先登録/一覧</h2><br>
 
-    <%= form_for @adress, url:adresses_path, method: :post do |f| %>
+    <%= form_for @address, url:adresses_path, method: :post do |f| %>
       <div class = "row">
         <div class = "col-xs-3">
           <%= f.label "郵便番号(ハイフンなし)" %>
@@ -19,7 +20,7 @@
         </div>
 
         <div class = "col-xs-4">
-          <%= f.text_field :adress, autofocus: true, autocomplete: "address", :size => "40*40" %>
+          <%= f.text_field :address, autofocus: true, autocomplete: "address", :size => "40*40" %>
         </div>
       </div><br>
 
@@ -48,10 +49,10 @@
         <th></th>
       </tr>
 
-      <% @adresses.each do |adress| %>
+      <% @addresses.each do |adress| %>
         <tr>
           <td><%= adress.postal_code %></td>
-          <td><%= adress.adress %></td>
+          <td><%= adress.address %></td>
           <td><%= adress.name %></td>
           <td>
             <%= link_to "編集する", edit_adress_path(adress), method: :get , class: "btn btn-primary" %>
