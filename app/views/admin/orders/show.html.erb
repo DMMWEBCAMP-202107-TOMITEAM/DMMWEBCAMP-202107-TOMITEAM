@@ -1,4 +1,4 @@
-<h1>管理者用顧客注文詳細ページ（show）</h1>
+<h1>管理者用顧客注文履歴詳細ページ（show）</h1>
 
 <div class="container">
 
@@ -12,7 +12,7 @@
       <tbody>
       <tr>
         <th>購入者</th>
-        <td><%= link_to admins_client_path(@order.customer) do %>
+        <td><%= link_to admin_client_path(@order.client) do %>
         <%= @order.client.last_name %>
         <%= @order.client.first_name %>
         <% end %>
@@ -32,7 +32,7 @@
       <tr>
         <th>注文ステータス</th>
         <td>
-        <%= form_for (@order), url:admin_order_path(@order) do |f| %>
+        <%= form_with model: @order, local:true, url:admin_order_path(@order) do |f| %>
         <%= f.select :order_status,Order.order_statuses.keys.to_a %>
         <%= f.submit "更新", class: "btn btn-success" %>
         <% end %>

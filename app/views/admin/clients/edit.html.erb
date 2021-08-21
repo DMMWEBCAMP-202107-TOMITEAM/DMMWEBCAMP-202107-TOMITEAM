@@ -3,7 +3,7 @@
 <div class="container">
 <h2>会員情報編集</h2>
 
-  <%= form_for(@client, url: admin_client_path) do |f| %>
+  <%= form_with model: @client, local:true, url: admin_client_path do |f| %>
 
   <table class="row table">
     <tr>
