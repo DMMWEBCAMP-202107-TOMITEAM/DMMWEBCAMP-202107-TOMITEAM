@@ -14,3 +14,19 @@
  *= require_self
  */
 @import "bootstrap";
+
+.fa-user-circle:before {
+    color: orange;
+}
+
+.fa-shopping-cart:before {
+    content: "\f07a";
+    color: pink;
+}
+
+.navbar-brand {
+    font-size: 50px;
+    font-family: serif;
+    // font-family: arial black ;
+    color: coral;
+}

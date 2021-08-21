@@ -55,15 +55,15 @@
 
 
         <tbody>
-      <% @order_details.each do |order_detail| %>
+      <% @order_items.each do |order_item| %>
           <tr>
-            <td><%= order_detail.item.name %></td>
-            <td><%= (order_detail.price).floor.to_s(:delimited, delimiter: ',') %></td>
-            <td><%= order_detail.quantity %></td>
-            <td><%= (order_detail.price * order_detail.quantity).floor.to_s(:delimited, delimiter: ',') %></td>
+            <td><%= order_item.item.name %></td>
+            <td><%= (order_item.price).floor.to_s(:delimited, delimiter: ',') %></td>
+            <td><%= order_item.amount %></td>
+            <td><%= (order_item.price * order_item.amount).floor.to_s(:delimited, delimiter: ',') %></td>
             <td>
-              <%= form_for (order_detail), url:admins_order_detail_path(order_detail) do |f|  %>
-              <%= f.select :making_status, OrderDetail.making_statuses.keys.to_a %>
+              <%= form_for (order_item), url:admin_order_item_path(order_item) do |f|  %>
+              <%= f.select :making_status, OrderItem.making_statuses %>
               <%= f.submit '更新',class:"btn btn-success" %>
               <% end %>
             </td>
