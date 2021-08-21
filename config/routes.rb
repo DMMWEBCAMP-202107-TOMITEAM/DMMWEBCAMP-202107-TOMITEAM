@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     resources :genres,only: [:index,:create,:edit,:update]
     resources :clients,only: [:index,:show,:edit,:update]
     resources :orders,only: [:index,:show,:update]
+    resources :order_items,only: [:update]
+    
+
   end
 
   scope module: "client" do
@@ -44,6 +47,7 @@ Rails.application.routes.draw do
     resources :adresses,only: [:index,:update,:create,:destroy,:edit]
 
     get '/search', to: 'searches#search'
+    # get 'search' => 'items#search'
  end
 
 
