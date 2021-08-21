@@ -1,7 +1,9 @@
         <div class='container'>
-          <h2 class="head-line">商品新規登録</h2>
+          <h2>商品新規登録</h2>
             <div class='row'>
+
               <%= form_with model: @item, url: '/admin/items', local:true do |f| %>
+
                <div class=col-6>
                  <div class="img_field">
                   <%= f.label :商品画像,class: "control-label"  %>
@@ -9,14 +11,17 @@
                   </div>
 
                   <%= render "item", f: f %>
-
                 <div class="form-group">
+
                   <%= f.submit "新規登録", class: "glyphicon glyphicon-pencil btn btn-success pull-right" %>
+
+                </div>
                 </div>
                   <% end %>
-             </div>
-           </div>
+              </div>
+            </div>
         </div>
+
 
 
 

@@ -1,15 +1,23 @@
-        <div class='container'>
-          <h2>商品編集</h2>
-            <div class='row'>
-              <%= form_with model:@item, url: '/admin/items', local:true do |f| %>
-               <div class=col-6>
-                 <div class="img_field">
-                  <%= f.label :商品画像,class: "control-label"  %>
-                  <%=f.attachment_field :image %>
-                  </div>
 
+   <div class='container'>
+    <h2>商品編集</h2>
+      <div class='row'>
+        <%= form_with model: @item, url: admin_item_path, local:true do |f| %>
+          <div class=col-6>
+            <div class="img_field">
+              <%= f.label :商品画像,class: "control-label"  %>
+              <%=f.attachment_field :image %>
 
-                  <% end %>
+              <%= render "item", f: f %>
+
+             <div class="form-group">
+              <%= f.submit "変更を保存", class: "glyphicon glyphicon-pencil btn btn-success pull-right" %>
+
              </div>
-           </div>
-        </div>
+              <% end %>
+          </div>
+      </div>
+   </div>
+
+
+

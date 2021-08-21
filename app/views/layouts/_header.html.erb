@@ -3,9 +3,11 @@
     <div class="container">
       <%= link_to "NaganoCake", root_path, class: "navbar-brand text-body"  %>
       <div class="collapse navbar-collapse">
+
         <ul class="navbar-nav ml-auto">
           <!--顧客がログインしている時-->
         <% if client_signed_in? %>
+          <li>ようこそ、<%= current_client.last_name%> さん！</li>
           <li><%= link_to ' マイページ',clients_my_page_path(current_client),class: 'nav-link text-body m-3 btn btn-info' %></li>
           <li><%= link_to ' 商品一覧',items_path,class: 'nav-link text-body m-3 btn btn-info' %></li>
           <li><%= link_to ' カート',cart_items_path,class: 'nav-link text-body m-3 btn btn-info'%></li>
