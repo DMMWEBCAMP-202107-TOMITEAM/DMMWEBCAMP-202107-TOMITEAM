@@ -22,7 +22,7 @@ class Admin::GenresController < ApplicationController
   def update
     @genre = Genre.find(params[:id])
     if @genre.update(genre_params)
-      redirect_to admins_genres_path
+      redirect_to admin_genres_path
       flash[:notice_update] = "ジャンル情報を更新しました！"
     else
       render 'edit'
@@ -34,3 +34,5 @@ class Admin::GenresController < ApplicationController
     params.require(:genre).permit(:name)
   end
 end
+
+
