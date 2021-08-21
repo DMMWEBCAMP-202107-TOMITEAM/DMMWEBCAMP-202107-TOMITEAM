@@ -1,16 +1,25 @@
 <div class="container">
  <div class="row">
+ <div class="p-3 mb-2 bg-light text-dark">
+
   <h4>商品一覧</h4>
-    <div class="col-12">
-     <table class="table">
+   </div>
+     <div class="col-12">
+      <div class="p-3 mb-2 bg-light text-dark">
+      <table class="table">
+
       <thead>
+
         <tr class="info">
+
           <th>商品ID</th>
           <th>商品名</th>
           <th>税抜価格</th>
           <th>ジャンル</th>
           <th>ステータス</th>
+
         </tr>
+
       </thead>
       <tbody>
 				<% @items.each do |item| %>
@@ -31,17 +40,22 @@
             </td>
             <td class="col-２">
               <% if item.sale_status == true %>
-      					<p><i class="fas fa-bullseye red"></i>販売中</p>
+              <p class="text-success">
+      					<i class="fas fa-bullseye red"></i>販売中
+      				</p>
       				<% elsif item.sale_status == false %>
-      					<p><i class="fas fa-bullseye blue"></i>販売停止中</p>
+      					<p class="text-dark">
+      					  <i class="fas fa-bullseye blue"></i>販売停止中
+      					</p>
       				<% end %>
             </td>
           </tr>
         <% end %>
-      </tbody>
-    </table>
+       </tbody>
+      </table>
+    </div>
+    </span>
   </div>
  <div class="text-center"><%= paginate(@items) %></div>
 </div>
-
 

@@ -1,7 +1,7 @@
 class Admin::ItemsController < ApplicationController
 
   def index
-    @items = Item.all.page(params[:page]).per(10)
+    @items = Item.all.order("created_at DESC").page(params[:page]).per(10)
   end
 
 
