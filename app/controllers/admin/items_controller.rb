@@ -25,10 +25,16 @@ class Admin::ItemsController < ApplicationController
   end
 
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+
 
   def update
-    if @item.uodate(item_params)
-      redirect_to items_path
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to admin_items_path
     else
        reder :edit
     end
