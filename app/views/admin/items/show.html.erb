@@ -10,22 +10,32 @@
 
 		     <div class="field">
 						<p>商品名
+						<br>
 						<%= @item.name %></p>
-		       </div><br>
+		       </div>
+		       <br>
 		      <div class="field">
 						<p>商品説明
+						<br>
 						<%= @item.introduction %></p>
-		      </div><br>
+		      </div>
+		      <br>
+
 		      <div class="field">
 						<p>ジャンル
+						<br>
 						<%= @item.genre.name %></p>
-		      </div><br>
+		      </div>
+		      <br>
 		      <div class="field">
 						<p>税込価格
+						<br>
 						<%= @item.price %>円</p>
-		      </div><br>
+		      </div>
+		      <br>
 		        <div class="field">
 						<p>販売ステータス
+						<br>
 			        <% if @item.sale_status == true %>
 					 <i class="fas fa-bullseye red"></i>販売中
 					<% elsif @item.sale_status == false %>
