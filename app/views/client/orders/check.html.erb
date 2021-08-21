@@ -1,0 +1,56 @@
+<div class="container">
+  <%= form_with model:@order, url: orders_check_path do |f|%>
+    <h4>注文情報確認</h4>
+    <table>
+      <tr>
+        <th>商品名</th>
+        <th>単価（税込）</th>
+        <th>数量</th>
+        <th>小計</th>
+      </tr>
+      <% sum = 0 %>
+      <% @cart_items.each do |cart| %>
+      <tr>
+        <td><%= cart.item.name %></td>
+        <td><%= include_tax(cart.item.price) %>円</td>
+        <td><%= cart.amount %></td>
+        <td><%= include_tax(cart.item.price) * cart.amount %>円</td>
+        <% price = include_tax(cart.item.price) * cart.amount %>
+        <% sum += price %>
+      </tr>
+      <% end %>
+    </table>
+    <table>
+      <tr>
+        <th>送料</th>
+        <td><%= @shipping_cost %>円</td>
+      </tr>
+      <tr>
+        <th>商品合計</th>
+        <td><%= sum %>円</td>
+      </tr>
+      <% payment = sum + @shipping_cost %>
+      <tr>
+        <th>請求金額</th>
+        <td><%= payment %>円</td>
+      </tr>
+    </table>
+    <h4>支払方法</h4>
+    <p><%= params[:order][:payment_method] %>
+    <h4>お届け先</h4>
+    <% address = ''%>
+    <p>〒
+			<% if params[:order][:address] == "mail" %>
+				<%= params[:order][:mail_address] %>
+				<% address = params[:order][:mail_address] %>
+			<% elsif params[:order][:address] == "new" %>
+				<%= params[:order][:newpostcode] %><%= params[:order][:newaddress] %><%= params[:order][:newname] %>
+				<% address = params[:order][:newpostcode] +" "+ params[:order][:newaddress] +" "+ params[:order][:newname] %>
+			<% else %>
+				<%= params[:order][:address] %>
+				<% address = params[:order][:address] %>
+			<% end %>
+		</p>
+		<%= f.submit '購入を確定する', class: 'btn btn-success' %>
+  <% end %>
+</div>

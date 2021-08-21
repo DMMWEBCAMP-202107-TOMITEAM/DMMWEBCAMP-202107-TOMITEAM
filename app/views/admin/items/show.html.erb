@@ -3,38 +3,39 @@
 	   <div class="row">
 		  <div class="col-3">
 		     <div id="img_field">
+
 		       <%= attachment_image_tag @item, :image, size: "300x400", fallback: "no_image.jpg" %>
 		      </div>
-	     </div>
 
-      <div class="col-5">
-	      <div class="field">
-					<p>商品名
-					<%= @item.name %></p>
-	       </div><br>
-	      <div class="field">
-					<p>商品説明
-					<%= @item.introduction %></p>
-	      </div><br>
-	      <div class="field">
-					<p>ジャンル
-					<%= @item.genre.name %></p>
-	      </div><br>
-	      <div class="field">
-					<p>税込価格
-					<%= @item.price %>円</p>
-	      </div><br>
-	      <div class="field">
-					<p>販売ステータス
-		        <% if @item.sale_status == true %>
-							　<i class="fas fa-bullseye red"></i>販売中
-						<% elsif @item.sale_status == false %>
-							　<i class="fas fa-bullseye blue"></i>販売停止中
-						<% end %>
-					 </p>
 	     </div>
-		      <div class="col-9">
-	      		<%= link_to "編集する", edit_admin_item_path(@item), data: {"turbolinks" => false}, class: "glyphicon glyphicon-pencil btn btn-success pull-right" %>
+           <div class="col-5">
+		     <div class="field">
+						<p>商品名
+						<%= @item.name %></p>
+		       </div><br>
+		      <div class="field">
+						<p>商品説明
+						<%= @item.introduction %></p>
+		      </div><br>
+		      <div class="field">
+						<p>ジャンル
+						<%= @item.genre.name %></p>
+		      </div><br>
+		      <div class="field">
+						<p>税込価格
+						<%= @item.price %>円</p>
+		      </div><br>
+		        <div class="field">
+						<p>販売ステータス
+			        <% if @item.sale_status == true %>
+					 <i class="fas fa-bullseye red"></i>販売中
+					<% elsif @item.sale_status == false %>
+					 <i class="fas fa-bullseye blue"></i>販売停止中
+					<% end %>
+			    	</p>
+		           </div>
+			   <div class="col-9">
+	      	 <%= link_to "編集する", edit_admin_item_path(@item), data: {"turbolinks" => false}, class: "glyphicon glyphicon-pencil btn btn-success pull-right" %>
       	  </div>
       	</div>
     </div>

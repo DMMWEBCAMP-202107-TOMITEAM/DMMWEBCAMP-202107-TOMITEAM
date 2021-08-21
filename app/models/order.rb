@@ -1,9 +1,9 @@
 class Order < ApplicationRecord
-  eunm payment_method:{
+  enum payment_method:{
     "クレジットカード": 0,
     "銀行振込": 1,
   }
-  eunm order_status:{
+  enum order_status:{
     "入金待ち": 0,
     "入金確認": 1,
     "製作中": 2,

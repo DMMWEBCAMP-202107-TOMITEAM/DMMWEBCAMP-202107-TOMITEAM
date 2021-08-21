@@ -5,7 +5,7 @@
       <div class="form-group col-10">
         <%= form_with model:@genre, url: '/admin/genres', local:true do |f| %>
         <%= f.label :ジャンル名 %>
-        <%= f.text_field :name,class: "col-md-4" %>
+        <%= f.text_field :name,class: "col-4" %>
         <%= f.submit "新規登録", class: "glyphicon glyphicon-pencil btn btn-success pull-right" %>
         <% end %>
 

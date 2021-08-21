@@ -1,9 +1,14 @@
 class Client::ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @items = Item.all.order("created_at DESC").page(params[:page]).per(8)
+    @genres = Genre.all
   end
   def show
-    @item = User.find(params[:id])
-    @numbers = [0,1,2,3,4,5,6,7,8,9,10]
+    @item = Item.find(params[:id])
+    @cart_item = CartItem.new
+    if client_signed_in?
+      @cart_items = CartItem.where(client_id:[current_client.id])
+    end
+    @genres = Genre.all
   end
 end
