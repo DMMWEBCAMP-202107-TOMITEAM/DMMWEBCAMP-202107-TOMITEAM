@@ -1,0 +1,7 @@
+<div class="serch_form">
+    <%= form_with url: admin_search_path,method: :get, local: true do |f| %>
+    <%= f.text_field :content,placeholder:"Search"%>
+    <%= f.select :model,options_for_select({"商品"=>"item","顧客"=>"client"})%>
+    <%= f.submit'検索'%>
+    <% end %>
+</div>
