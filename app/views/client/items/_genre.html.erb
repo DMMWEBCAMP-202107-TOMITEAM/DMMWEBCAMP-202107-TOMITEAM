@@ -1,28 +1,7 @@
-<div class="name-search">
-  <% if client_signed_in? %>
-    <h5>商品名検索</h5>
-    <%= form_with url: search_path, method: :get, local: true do |f| %>
-      <%= f.text_field 'search[value]', size: "18x4" %><br>
-      <span class="search-button col-xs-12 text-right">
-        <%= f.select 'search[partical]', options_for_select({ "部分一致" => "partical", "前方一致" => "forward", "後方一致" => "backward", "完全一致" => "match" }) %>
-        <%= f.submit :"検索" %>
-      </span>
+
+  <ul class="list-group">
+    <li class="list-group-item"><strong>ジャンル検索</strong></li>
+    <% @genres.each do |genre| %>
+      <li class="list-group-item"><%= link_to genre.name, search_path('search[value]': genre.id) %></li>
     <% end %>
-  <% end %>
-</div>
-<table class="table table-bordered genre-table">
-    <thead>
-      <tr>
-        <th>ジャンル検索</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% genres.each do |genre| %>
-      <tr>
-        <td>
-          <%= link_to genre.name, search_path('search[value]': genre.id, 'search[how]': "match") %>
-        </td>
-      </tr>
-    <% end %>
-    </tbody>
-</table>
+  </ul>

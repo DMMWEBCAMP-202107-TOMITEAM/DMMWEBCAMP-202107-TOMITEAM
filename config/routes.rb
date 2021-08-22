@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :clients,only: [:index,:show,:edit,:update]
     resources :orders,only: [:index,:show,:update]
     resources :order_items,only: [:update]
-    
+    get '/search', to: 'searches#search'
 
   end
 
@@ -46,8 +46,9 @@ Rails.application.routes.draw do
 
     resources :adresses,only: [:index,:update,:create,:destroy,:edit]
 
-    get '/search', to: 'searches#search'
     # get 'search' => 'items#search'
+    get '/search', to: 'searches#search'
+
  end
 
 

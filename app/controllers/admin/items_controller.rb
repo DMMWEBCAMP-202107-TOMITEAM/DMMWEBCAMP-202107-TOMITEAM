@@ -7,6 +7,7 @@ class Admin::ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @genres=Genre.all
   end
 
 
@@ -27,6 +28,7 @@ class Admin::ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    
   end
 
 

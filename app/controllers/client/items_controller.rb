@@ -1,8 +1,16 @@
 class Client::ItemsController < ApplicationController
+
+  def top
+    @items = Item.order('id DESC').limit(4)
+    # ASCだと古い順でDESCで新着順です。
+    @genres=Genre.all
+  end
+  
   def index
     @items = Item.all.order("created_at DESC").page(params[:page]).per(8)
     @genres = Genre.all
   end
+  
   def show
     @item = Item.find(params[:id])
     @cart_item = CartItem.new
