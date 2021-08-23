@@ -12,11 +12,20 @@ class Client::ItemsController < ApplicationController
   end
   
   def show
+    @genres = Genre.all
     @item = Item.find(params[:id])
     @cart_item = CartItem.new
     if client_signed_in?
       @cart_items = CartItem.where(client_id:[current_client.id])
     end
-    @genres = Genre.all
+    # if client_signed_in?
+    #   if current_client.item_include?(@item)
+    #     @cart_item = current_client.cart_items.find_by(item_id: @item.id)
+    #   else
+    #     @cart_item = CartItem.new
+    #   end
+    # else
+    #   @cart_item = CartItem.new
+    # end
   end
 end
