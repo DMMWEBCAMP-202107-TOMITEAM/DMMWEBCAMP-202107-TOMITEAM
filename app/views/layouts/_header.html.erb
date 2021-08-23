@@ -38,7 +38,13 @@
     <!--<div class="container">-->
     <div class="ml-5">
       <div class="text-center ml-5">
-        <%= link_to "NaganoCake", root_path, class: "navbar-brand text-body " %>
+        <% if client_signed_in? %>
+          <%= link_to "NaganoCake", root_path, class: "navbar-brand text-body " %>
+        <% elsif admin_signed_in? %>
+          <%=  "NaganoCake" %>
+        <% else %>
+          <%= link_to "NaganoCake", root_path, class: "navbar-brand text-body " %>
+        <% end %>
       </div>
     </div>
 
