@@ -1,9 +1,9 @@
 <div class="d-flex justify-content-center">
 　<div class='row'>
-    　<div class="d-flex justify-content-center">
-         <div class="p-3 mb-2 bg-light text-dark">
-           <h4>▼️商品詳細</h4>
-         <div class=col-10>
+　    <div class="p-3 mb-2 bg-light text-dark">
+
+      <h4>▼商品詳細</h4>
+       <div class="p-3 mb-2 bg-white text-dark">
 	    <div id="img_field">
          <%= attachment_image_tag @item, :image, size: "300x200", fallback: "no_image.jpg" %>
 		</div>
@@ -44,7 +44,7 @@
 			    	</p>
 		           </div>
 
-		      	<%= link_to "編集する", edit_admin_item_path(@item), data: {"turbolinks" => false}, class: "glyphicon glyphicon-pencil btn btn-success pull-right" %>
+		      	<center><%= link_to "編集する", edit_admin_item_path(@item), data: {"turbolinks" => false}, class: "glyphicon glyphicon-pencil btn btn-success pull-right" %></center>
 
 	     </div>
 	   </div>

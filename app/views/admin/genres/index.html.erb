@@ -1,18 +1,22 @@
-<div class='container'>
-  <h2>ジャンル一覧・追加</h2>
-    <div class='row'>
-      <div class="form-group col-10">
-        <%= form_with model: @genre, url: '/admin/genres', local:true do |f| %>
-        <%= f.label :ジャンル名 %>
-        <%= f.text_field :name,class: "col-4" %>
+ <div class="row justify-content-center">
+　  <div class="p-3 mb-2 bg-light text-dark">
+      <h4>▼ジャンル追加・一覧</h4>
+       <div class="p-3 mb-2 bg-white text-dark">
+        <div class="form-group col-12">
+         <%= form_with model: @genre, url: '/admin/genres', local:true do |f| %>
+
+        <center><%= f.label :ジャンル名 %>
+        <%= f.text_field :name %>
         <%= f.submit "新規登録", class: "glyphicon glyphicon-pencil btn btn-success pull-right" %>
         <% end %>
+        </center>
 
 
-       <table class="table genre-index">
+　　　　<div class="p-3 mb-2 bg-white text-dark">
+        <table class="table">
         <thead>
           <tr>
-          　<th>ジャンル</th>
+          <th>ジャンル</th>
           </tr>
         </thead>
 　　　　 <tbody>
@@ -24,10 +28,14 @@
           <% end %>
          </tbody>
         </table>
-    </div>
-   </div>
+     </div>
   </div>
+
 </div>
+
+
+
+
 
 
 
