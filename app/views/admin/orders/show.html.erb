@@ -78,17 +78,18 @@
 
           <tr>
             <td>商品合計</td>
-            <td><%= (@order.total_payment - @order.postage).to_s(:delimited, delimiter: ',') %></td>
+            <!--<td>%= (@order.total_payment - @order.shipping_cost).to_s(:delimited, delimiter: ',') %></td>-->
+            <td><%= @order.total_payment %></td>
           </tr>
 
           <tr>
             <td>送料</td>
-            <td><%= @order.postage.to_s(:delimited, delimiter: ',') %></td>
+            <td><%= @order.shipping_cost.to_s(:delimited, delimiter: ',') %></td>
           </tr>
 
           <tr>
             <td>請求合計金額</td>
-            <td><%= @order.total_payment.to_s(:delimited, delimiter: ',') %></td>
+            <!--<td>%= @order.total_payment.to_s(:delimited, delimiter: ',') %></td>-->
           </tr>
         </tbody>
       </table>
