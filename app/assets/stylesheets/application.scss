@@ -15,20 +15,85 @@
  */
 @import "bootstrap";
 
-
-.fa-user-circle:before {
-    color: orange;
-}
-
-.fa-shopping-cart:before {
-    content: "\f07a";
-    color: pink;
-}
-
 .navbar-brand {
     font-size: 50px;
     font-family: serif;
     // font-family: arial black ;
     color: coral;
 }
+
+
+.slick-next {
+    right: 10px !important;
+    z-index: 100;
+ }
+
+.slick-prev {
+    left: 10px !important;
+  z-index: 100;
+ }
+
+
+//  検索フォーム
+.search_form{
+  position       : relative;
+  width          : 250px;              /* BOXの幅               */
+  height         : 40px;               /* BOXの高さ             */
+  letter-spacing : 0.1em;              /* 文字間隔              */
+  font-weight    : bold;               /* 太字                  */
+  line-height    : 0;                  /* 標準の行高さ          */
+}
+
+.search_form_text{
+  position       : absolute;
+  display        : block;              /* ブロック化            */
+  box-sizing     : border-box;         /* 枠線,余白を含んだ長さ */
+  height         : 40px;               /* BOXの高さ             */
+  width          : 100%;               /* テキスト入力の幅      */
+  margin         : 0;                  /* 外余白                */
+  padding        : 0 45px 0 8px;       /* 内余白                */
+  border         : 2px solid gray;     /* 枠線　幅,実践,色      */
+  border-radius  : 6px;                /* 角丸                  */
+  color          : black;               /* 文字色                */
+  font-size      : 12px;               /* フォントサイズ        */
+  outline        : 0;                  /* 入力の薄い枠を非表示  */
+}
+
+.search_form_btn{
+  position       : absolute;
+  box-sizing     : border-box;         /* 枠線,余白を含んだ長さ */
+  height         : 28px;               /* 入力の高さ            */
+  margin         : 0;                  /* 外余白                */
+  padding        : 6px 10px;           /* 内余白                */
+  top            : 6px;                /* ボタン表示位置(上)    */
+  right          : 6px;                /* ボタン表示位置(右)    */
+  border         : none;               /* 枠線　幅,実践,色      */
+  border-radius  : 6px;                /* 右上下の角丸          */
+  background     : gray;               /* ボタンの色            */
+  color          : black;               /* 文字色                */
+  cursor         : pointer;            /* カーソル設定          */
+
+  &:hover{
+    background    : gainsboro;               /* フォーカス時の背景色  */
+  }
+}
+
+
+// TOP
+.fa-user-circle:before{
+  color          : gray;
+
+  &:hover{
+    background    : gainsboro;              /* フォーカス時の背景色  */
+  }
+}
+
+.fa-shopping-cart:before {
+
+  color          : gray;
+  &:hover{
+    background    : gainsboro;              /* フォーカス時の背景色  */
+  }
+}
+
 

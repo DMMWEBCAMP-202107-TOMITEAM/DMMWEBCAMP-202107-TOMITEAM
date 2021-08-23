@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/a5035aaf79.js" crossorigin="anonymous"></script>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
+
     <!-- drawer.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
     <!-- jquery &amp; iScroll -->
@@ -25,10 +25,12 @@
           $('.drawer').drawer();
         });
     </script>
+
   </head>
   <body class="drawer drawer--left">
     <%= render 'layouts/header' %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
 
