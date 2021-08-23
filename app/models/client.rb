@@ -11,5 +11,9 @@ class Client < ApplicationRecord
   def active_for_authentication?
     super && (self.client_status == false)
   end
+  
+  def self.search_for(content)
+        Client.where('last_name LIKE ?', '%'+content+'%').or(Client.where('first_name LIKE ?', '%'+content+'%'))
+  end
 
 end
