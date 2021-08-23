@@ -1,11 +1,11 @@
-<div class="show-container">
+<div class="container">
 <!--<div class="mx-auto">-->
  <div class="row justify-content-center">
    <!--<div class=""></div>-->
   <h2>会員情報詳細</h2>
     <div class="col-12 mx-auto">
 
-     <table class="row table justify-content-center mx-auto">
+     <table class="row table justify-content-center table-primary mx-auto">
 
         <tr>
           <th class="col-xs-6">顧客ID</th>
@@ -59,8 +59,8 @@
     </table>
 
     <div class="row justify-content-center">
-      <%= link_to "編集する", edit_admin_client_path(@client), class: "btn btn-success mr-5" %>
-      <%= link_to "注文一覧を見る",admin_orders_path, class: "btn btn-success" %>
+      <%= link_to "編集する", edit_admin_client_path(@client), class: "btn btn-outline-primary mr-5" %>
+      <%= link_to "注文一覧を見る",admin_orders_path, class: "btn btn-outline-primary" %>
     </div>
    </div>
  </div>

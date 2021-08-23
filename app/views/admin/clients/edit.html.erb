@@ -5,7 +5,7 @@
   <div class="col-12">
   <%= form_with model: @client, local:true, url: admin_client_path do |f| %>
 
-  <table class="row table row table justify-content-center">
+  <table class="row table row justify-content-center table-primary">
     <tr>
       <th class="col-xs-2"><%= f.label :会員ID %></th>
       <td class="col-xs-10"><%= f.text_field :id  , class:"form-control"%></td>
@@ -53,8 +53,9 @@
 
 
       <div class="row text-right justify-content-center">
-        <%= f.submit "変更を保存する" ,class: "btn btn-success " %>
+        <%= f.submit "変更を保存する" ,class: "btn btn-outline-primary " %>
       <% end %>
+
   </div>
 </div>
 
