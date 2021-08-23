@@ -47,8 +47,8 @@
           <!--顧客がログインしている時-->
         <% if client_signed_in? %>
           <div class="mt-4 mr-5"><li>ようこそ、<%= current_client.last_name%> さん！</li></div>
-          <li><%= link_to ' ',clients_my_page_path(current_client),class: 'fas fa-user-circle fa-2x nav-link text-body m-3 size' %></li>
-          <li><%= link_to '',cart_items_path,class: 'fas fa-shopping-cart fa-2x nav-link text-body m-3 '%></li>
+          <li class="navi-item"><%= link_to '',clients_my_page_path(current_client),class: 'fas fa-user-circle fa-2x nav-link text-body m-3 size' %></li>
+          <li class="navi-item"><%= link_to '',cart_items_path,class: 'fas fa-shopping-cart fa-2x nav-link text-body m-3 '%></li>
           <li><div class="input-group mt-4 pl-4">
           <%= render 'layouts/search' %>
           </div></li>
@@ -56,9 +56,9 @@
           <!--管理者がログインしている時-->
         <% elsif admin_signed_in? %>
           <!--会員一覧-->
-          <li><%= link_to "", admin_clients_path, class: 'fas fa-user-circle fa-2x nav-link text-body m-3 size' %></li>
+          <li class="navi-item"><%= link_to "", admin_clients_path, class: 'fas fa-user-circle fa-2x nav-link text-body m-3 size' %></li>
           <!--注文履歴一覧-->
-          <li><%= link_to "", admin_orders_path, class: 'fas fa-shopping-cart fa-2x nav-link text-body m-3' %></li>
+          <li class="navi-item"><%= link_to "", admin_orders_path, class: 'fas fa-shopping-cart fa-2x nav-link text-body m-3' %></li>
           <li><div class="input-group mt-4 pl-4">
           <%= render 'layouts/admin_search' %>
           </div></li>
@@ -67,9 +67,9 @@
         <% else %>
           <li></li>
           <!--ログイン画面-->
-          <li><%= link_to ' ', new_client_session_path ,class: 'fas fa-user-circle fa-2x nav-link text-body m-3 size' %></li>
+          <li class="navi-item"><%= link_to '', new_client_session_path ,class: 'fas fa-user-circle fa-2x nav-link text-body m-3 size' %></li>
           <!--ログイン画面-->
-          <li><%= link_to ' ', new_client_session_path ,class: 'fas fa-shopping-cart fa-2x nav-link text-body m-3 '%></li>
+          <li class="navi-item"><%= link_to '', new_client_session_path ,class: 'fas fa-shopping-cart fa-2x nav-link text-body m-3 '%></li>
           <li><div class="input-group mt-4 pl-4">
           <%= render 'layouts/admin_search' %>
           </div></li>
@@ -77,6 +77,6 @@
         <% end %>
         </ul>
       </div>
-  </nav>
+    </nav>
   </div>
 </header>
