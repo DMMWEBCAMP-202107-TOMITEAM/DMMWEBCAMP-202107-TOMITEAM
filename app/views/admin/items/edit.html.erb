@@ -1,7 +1,9 @@
 <div class="d-flex justify-content-center">
 　<div class='row'>
-         <div class="p-3 mb-2 bg-light text-dark">
+　   <div class="p-3 mb-2 bg-light text-dark">
+
            <h4>▼️商品編集</h4>
+           <div class="p-3 mb-2 bg-white text-dark">
            <dl>
              <%= form_with model: @item, url: admin_item_path, local:true do |f| %>
                <div class=col-10>
@@ -10,10 +12,11 @@
                  <dd><%=f.attachment_field :image %></dd>
                  <%= render "item", f: f %>
             </dl>
-                <div class="form-group">
+                <div class="formm-group">
                  <center><%= f.submit "変更を保存", class: "glyphicon glyphicon-pencil btn btn-success pull-right" %></center>
                 </div>
               <% end %>
+             </div>
           </div>
       </div>
    </div>
