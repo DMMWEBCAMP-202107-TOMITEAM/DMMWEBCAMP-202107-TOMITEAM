@@ -29,6 +29,7 @@ class Client::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.client_id = current_client.id
 
+
       if params[:order][:address_op] == "1"
         @order.postal_code = current_client.postal_code
         @order.address = current_client.address

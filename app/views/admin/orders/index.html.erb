@@ -18,7 +18,7 @@
             <tr>
               <td><%= link_to order.created_at.strftime("%Y-%m-%d %H:%M:%S"), admin_order_path(order) %></td>
               <td><%= order.client.last_name + " " + order.client.first_name %></td>
-              <td><%= order.order_details.sum(:quantity) %></td>
+              <td><%= order.order_items.sum(:amount) %></td>
               <td><%= order.order_status %></td>
             </tr>
             <% end %>
