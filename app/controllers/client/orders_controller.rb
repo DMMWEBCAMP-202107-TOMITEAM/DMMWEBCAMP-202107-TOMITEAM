@@ -28,7 +28,6 @@ class Client::OrdersController < ApplicationController
     @address = current_client.address
     @order = Order.new(order_params)
     @order.client_id = current_client.id
-    # @order.payment_method = session[:order][:payment_method]
 
       if params[:order][:address_op] == "1"
         @order.postal_code = current_client.postal_code
@@ -36,15 +35,12 @@ class Client::OrdersController < ApplicationController
         @order.name = "#{current_client.first_name}#{current_client.last_name}"
       elsif params[:order][:address_op] == "2"
         address = Adress.find(params[:order][:address_id])
-        @order.address = address.address
+        @order.address = adress.address
         @order.name = address.name
         @order.postal_code = address.postal_code
       else params[:order][:address_op] == "3"
       end
     @shipping_cost = 800
-
-
-
 
   end
 
