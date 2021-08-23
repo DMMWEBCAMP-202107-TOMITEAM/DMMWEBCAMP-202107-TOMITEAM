@@ -21,13 +21,13 @@
         </td>
         <td>
           <% order.order_items.all.each do |item| %>
-            <p><%= item.items.name %></p>
+            <p><%= item.item.name %></p>
           <% end %>
         </td>
         <td><%= order.total_payment %></td>
         <td><%= order.order_status %></td>
         <td>
-          <%= link_to "表示する",order_path,class: 'btn btn-primary' %>
+          <%= link_to "表示する",order_path(order), class: 'btn btn-primary' %>
         </td>
       </tr>
     <% end %>
