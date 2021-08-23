@@ -28,6 +28,9 @@ class Client::OrdersController < ApplicationController
     @address = current_client.address
     @order = Order.new(order_params)
     @order.client_id = current_client.id
+    @sum = 0
+    @price =  @cart_items.item.price * @cart_items.amount
+    @total_price = @price + @shipping_cost
     # @order.payment_method = session[:order][:payment_method]
 
       if params[:order][:address_op] == "1"
