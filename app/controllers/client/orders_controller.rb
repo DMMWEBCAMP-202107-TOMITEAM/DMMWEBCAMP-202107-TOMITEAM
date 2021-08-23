@@ -18,7 +18,7 @@ class Client::OrdersController < ApplicationController
 
     # 下3行は商品合計を出すため
     @sum = 0
-    @subtotals = @order_items.map { |order_item| order_item.price * order_item.amount }
+    @subtotals = @order_items.map { |order_item| (order_item.price*1.1) * order_item.amount }
     @sum = @subtotals.sum
   end
 
@@ -28,10 +28,7 @@ class Client::OrdersController < ApplicationController
     @address = current_client.address
     @order = Order.new(order_params)
     @order.client_id = current_client.id
-    @sum = 0
-    @price =  @cart_items.item.price * @cart_items.amount
-    @total_price = @price + @shipping_cost
-    # @order.payment_method = session[:order][:payment_method]
+
 
       if params[:order][:address_op] == "1"
         @order.postal_code = current_client.postal_code
@@ -39,15 +36,12 @@ class Client::OrdersController < ApplicationController
         @order.name = "#{current_client.first_name}#{current_client.last_name}"
       elsif params[:order][:address_op] == "2"
         address = Adress.find(params[:order][:address_id])
-        @order.address = address.address
+        @order.address = adress.address
         @order.name = address.name
         @order.postal_code = address.postal_code
       else params[:order][:address_op] == "3"
       end
     @shipping_cost = 800
-
-
-
 
   end
 
