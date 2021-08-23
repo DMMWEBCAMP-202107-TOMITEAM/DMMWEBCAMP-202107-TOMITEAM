@@ -29,7 +29,7 @@
             </tr>
           </tbody>
         </table>
-        
+
         <h5>注文内容</h5>
         <table class="table table-bordered">
           <thead>
@@ -44,20 +44,20 @@
             <% @order_items.each do |order_item| %>
               <tr>
                 <td><%= order_item.item.name %></td>
-                <td><%= order_item.price.to_s(:delimited) %></td>
+                <td><%= (order_item.price*1.1).floor.to_s(:delimited) %></td>
                 <td><%= order_item.amount %></td>
-                <td><%= (order_item.price * order_item.amount).to_s(:delimited) %></td>
+                <td><%= (order_item.price * 1.1 * order_item.amount).floor.to_s(:delimited) %></td>
               </tr>
             <% end %>
           </tbody>
         </table>
-        
+
         <h5>請求情報</h5>
         <table class="table table-bordered">
           <tbody>
             <tr>
               <td>商品合計</td>
-              <td><%= @sum.to_s(:delimited) %></td>
+              <td><%= @sum.floor.to_s(:delimited) %></td>
             </tr>
             <tr>
               <td>配送料</td>
@@ -70,5 +70,5 @@
           </tbody>
         </table>
       </div>
-    </div>    
+    </div>
   </div>

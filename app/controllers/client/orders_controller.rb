@@ -18,7 +18,7 @@ class Client::OrdersController < ApplicationController
 
     # 下3行は商品合計を出すため
     @sum = 0
-    @subtotals = @order_items.map { |order_item| order_item.price * order_item.amount }
+    @subtotals = @order_items.map { |order_item| (order_item.price*1.1) * order_item.amount }
     @sum = @subtotals.sum
   end
 
