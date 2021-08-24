@@ -1,6 +1,7 @@
 <div class="container">
-  <%= form_with model: @order, url: orders_check_path do |f|%>
+    <br></br>
     <h4>注文情報確認</h4>
+    <br></br>
     <table class="table table-bordered">
       <tr>
         <th>商品名</th>
@@ -8,52 +9,51 @@
         <th>数量</th>
         <th>小計</th>
       </tr>
-      <% sum = 0 %>
+      <% @sum = 0 %>
       <% @cart_items.each do |cart| %>
       <tr>
-        <td><%= cart.item.name %></td>
-        <td><%= taxin_price(cart.item.price) %>円</td>
+        <td>
+          <%= attachment_image_tag cart.item, :image, format: 'jpeg', fallback: "no_image.jpg",size:"50x50" %>&emsp;
+          <%= cart.item.name %>
+        </td>
+        <td><%= taxin_price(cart.item.price).to_s(:delimited) %>円</td>
         <td><%= cart.amount %></td>
-        <td><%= taxin_price(cart.item.price) * cart.amount %>円</td>
-        <% price = taxin_price(cart.item.price) * cart.amount %>
-        <% sum += price %>
+        <td><%= (taxin_price(cart.item.price) * cart.amount).to_s(:delimited) %>円</td>
+        <% @price = taxin_price(cart.item.price) * cart.amount %>
+        <% @sum += @price %>
       </tr>
+      <% @payment = @sum + @shipping_cost %>
       <% end %>
     </table>
     <table class="table table-bordered">
       <tr>
         <th>送料</th>
-        <td><%= @shipping_cost %>円</td>
+        <td><%= (@shipping_cost).to_s(:delimited) %>円</td>
       </tr>
       <tr>
         <th>商品合計</th>
-        <td><%= sum %>円</td>
+        <td><%= @sum.to_s(:delimited) %>円</td>
       </tr>
-      <% payment = sum + @shipping_cost %>
+
       <tr>
         <th>請求金額</th>
-        <td><%= payment %>円</td>
+        <td><%= @payment.to_s(:delimited) %>円</td>
       </tr>
     </table>
-    <h4>支払方法</h4>
-    <%= @order.payment_method %>
-    <!--<p>%= params[:order][:payment_method] %>-->
-    <h4>お届け先</h4>
-    <p><%= @order.postal_code %>&emsp;<%= @order.address %></p>
+    <h5>支払方法&emsp;&emsp;<%= @order.payment_method %></h5>
+
+    <h5>お届け先&emsp;&emsp;〒<%= @order.postal_code %>&emsp;<%= @order.address %></h5>
     <p><%= @order.name %></p>
-  <!--  % address = ''%>-->
-  <!--  <p>〒-->
-		<!--	% if params[:order][:address] == "mail" %>-->
-		<!--		%= params[:order][:mail_address] %>-->
-		<!--		% address = params[:order][:mail_address] %>-->
-		<!--	% elsif params[:order][:address] == "new" %>-->
-		<!--		%= params[:order][:newpostcode] %> %= params[:order][:newaddress] %> %= params[:order][:newname] %>-->
-		<!--		% address = params[:order][:newpostcode] +" "+ params[:order][:newaddress] +" "+ params[:order][:newname] %>-->
-		<!--	% else %>-->
-		<!--		%= params[:order][:address] %>-->
-		<!--		% address = params[:order][:address] %>-->
-		<!--	% end %>-->
-		<!--</p>-->
+
+  <%= form_with model: @order, url: orders_path, local: true do |f|%>
 		<%= f.submit '購入を確定する', class: 'btn btn-success' %>
+		<%= f.hidden_field :client_id, :value => @order.client_id %>
+    <%= f.hidden_field :payment_method, :value => @order.payment_method %>
+    <%= f.hidden_field :postal_code, :value => @order.postal_code %>
+    <%= f.hidden_field :address, :value => @order.address %>
+    <%= f.hidden_field :total_payment, :value => @payment %>
+    <%= f.hidden_field :name, :value => @order.name %>
+    <%= f.hidden_field :shipping_cost, :value => @shipping_cost %>
+    <%= f.hidden_field :order_status, :value => @order.order_status %>
   <% end %>
 </div>

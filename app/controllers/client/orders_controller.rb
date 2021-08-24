@@ -3,6 +3,7 @@ class Client::OrdersController < ApplicationController
     @order = Order.new
     @client = Client.find(current_client.id)
     @shipping_addresses = @client.adresses
+
     # @cart_items = CartItem.where(client_id:[current_client.id])
     # @adresses = Adress.where(client_id:[current_client.id])
   end
@@ -12,29 +13,41 @@ class Client::OrdersController < ApplicationController
   end
 
   def show
-    # @order = Order.find(params[:id])
-    # @order_items = @order.order_items.all
+    @order = Order.find(params[:id])
+    @order_items = @order.order_items.all
 
-    #下3行は商品合計を出すため
-    # @sum = 0
-    # @subtotals = @order_items.map { |order_item| order_item.price * order_item.amount }
-    # @sum = @subtotals.sum
+    # 下3行は商品合計を出すため
+    @sum = 0
+    @subtotals = @order_items.map { |order_item| (order_item.price*1.1) * order_item.amount }
+    @sum = @subtotals.sum
   end
 
   def check
+
     @cart_items = current_client.cart_items.all
-    # @cart_items = CartItem.where(client_id:[current_client.id])
-    @order = Order.new(
-      address: session[:address],
-      postal_code: session[:postal_code],
-      name: session[:name],
-    )
+    @address = current_client.address
+    @order = Order.new(order_params)
+    @order.client_id = current_client.id
+
+
+      if params[:order][:address_op] == "1"
+        @order.postal_code = current_client.postal_code
+        @order.address = current_client.address
+        @order.name = "#{current_client.first_name}#{current_client.last_name}"
+      elsif params[:order][:address_op] == "2"
+        address = Adress.find(params[:order][:address_id])
+        @order.address = adress.address
+        @order.name = address.name
+        @order.postal_code = address.postal_code
+      else params[:order][:address_op] == "3"
+      end
     @shipping_cost = 800
+
   end
 
   def create
     @cart_items = CartItem.where(client_id:[current_client.id])
-    @order = Order.new
+    @order = Order.new(order_params)
     @shipping_cost = 800
     if params[:page] == "new"
       render 'check'
@@ -44,7 +57,7 @@ class Client::OrdersController < ApplicationController
       end
       if @order.save
         @cart_items.each do |cart_item|
-          OrderItem.create!(order_id: @order.id, count:cart_item.count, item_id:cart_item.item_id, price:cart_item.item.price)
+          OrderItem.create!(order_id: @order.id, amount:cart_item.amount, item_id:cart_item.item_id, price:cart_item.item.price)
         end
         @cart_items.destroy_all
         redirect_to '/thanks'

@@ -73,4 +73,8 @@ gem "refile-mini_magick"
 
 gem 'font-awesome-sass'
 
+gem 'pry-byebug'
+
+
 gem 'ransack'
+
