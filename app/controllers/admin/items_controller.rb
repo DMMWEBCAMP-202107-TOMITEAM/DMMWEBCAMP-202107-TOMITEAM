@@ -27,9 +27,7 @@ class Admin::ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    
   end
-
 
 
   def update
@@ -37,7 +35,7 @@ class Admin::ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to admin_items_path
     else
-       reder :edit
+       render :edit
     end
   end
 
@@ -54,8 +52,4 @@ class Admin::ItemsController < ApplicationController
    end
 
 
-
-
-
 end
-
