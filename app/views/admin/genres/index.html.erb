@@ -1,8 +1,7 @@
- <div class="row justify-content-center">
-　  <div class="p-3 mb-2 bg-light text-dark">
-      <h4>▼ジャンル追加・一覧</h4>
-       <div class="p-3 mb-2 bg-white text-dark">
-        <div class="form-group col-12">
+　<div class="genres-wrapper">
+　　<div class="container bg-light text-dark">
+　    <div class="p-3 mb-2 bg-light text-dark">
+       <h4>▼ジャンル一覧・追加</h4>
          <%= form_with model: @genre, url: '/admin/genres', local:true do |f| %>
 
         <center><%= f.label :ジャンル名 %>
@@ -30,7 +29,7 @@
         </table>
      </div>
   </div>
-
+</div>
 </div>
 
 

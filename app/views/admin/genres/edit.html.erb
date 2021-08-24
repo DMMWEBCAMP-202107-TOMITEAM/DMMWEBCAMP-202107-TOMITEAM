@@ -1,64 +1,28 @@
-  <div class="row justify-content-center">
-　  <div class="p-3 mb-2 bg-light text-dark">
-      <h4>▼ジャンル編集</h4>
+　 <div class="signup-wrapper">
+　　<div class="container bg-light text-dark">
+　    <div class="p-3 mb-2 bg-light text-dark">
+      <div class="outer">
+      <center>
+       <div class="h4">▼ジャンル編集</h4></div>
        <div class="p-3 mb-2 bg-white text-dark">
-        <div class="form-group col-6">
-         <%= form_with model: @genre, url: admin_genre_path, local:true do |f| %>
+       <div class="form-group col-5">
+        <%= form_with model: @genre, url: admin_genre_path, local:true do |f| %>
 
          <%= f.label :ジャンル名 %>
 
          <%= f.text_field :name%>
-        </div>
-         <div class="group">
-         <center><%= f.submit "変更を保存", class: "glyphicon glyphicon-pencil btn btn-success pull-right" %></center>
+         </center>
+
+
+         <div class="groupp">
+         <center><%= f.submit "変更を保存", class: "btn btn-success pull-right" %></center>
          </div>
          <% end %>
-
+         </div>
+         </div>
+        </div>
       </div>
     </div>
  </div>
-
-
-
-<div class="container text-white">
-    <div class="row">
-        <div class="col-5 border bg-success">
-            ①
-        </div>
-        <div class="col-4 border bg-success">
-            ②
-        </div>
-        <div class="col-4 border bg-success">
-            ③
-        </div>
-    </div>
 </div>
 
-
-<div class="container text-white">
-    <div class="row">
-        <div class="col-3 border bg-danger">
-            ④
-        </div>
-        <div class="col-5 border bg-danger">
-            ⑤
-        </div>
-        <div class="col-9 border bg-danger">
-            ⑥
-        </div>
-    </div>
-</div>
-
-
-
-
-<div class="container">
-    <form>
-        <label>name</label>
-        <input type="text" name="email">
-        <label>password</label>
-        <input type="text" name="password">
-        <input type="checkbox">remember
-        <button type="submit">ログイン</button>
-    </form>
-</div>
