@@ -28,12 +28,11 @@
         <th>注文ステータス</th>
         <td>
         <%= form_with model: @order, local:true, url:admin_order_path(@order) do |f| %>
-        <%= f.select :order_status,Order.order_statuses.keys.to_a %>
+        <%= f.select :order_status,[["入金待ち", :wait_for_payment], ["入金確認", :confirm_payment], ["製作中", :producing], ["発送準備", :ready_to_ship], ["発送済み", :complete_ship]] %>
         <%= f.submit "更新", class: "btn btn-success" %>
         <% end %>
         </td>
       </tr>
-
     </tbody>
   </table>
 
@@ -54,18 +53,17 @@
           <tr>
 
             <td><%= order_item.item.name %></td>
-            <td><%= (order_item.price).floor.to_s(:delimited, delimiter: ',') %></td>
+            <td><%= (order_item.price * 1.1).floor.to_s(:delimited, delimiter: ',') %></td>
             <td><%= order_item.amount %></td>
             <td><%= (order_item.price * order_item.amount).floor.to_s(:delimited, delimiter: ',') %></td>
 
             <td>
               <%= form_for (order_item), url:admin_order_item_path(order_item) do |f|  %>
-              <%= f.select :making_status, OrderItem.making_statuses %>
+              <%= f.select :making_status, [["着手不可", :not_startable], ["製作待ち", :wait], ["製作中", :producing], ["製作完了", :complete]]  %>
               <%= f.submit '更新',class:"btn btn-success" %>
               <% end %>
             </td>
           </tr>
-
           <% end %>
         </tbody>
       </table>
@@ -78,18 +76,15 @@
 
           <tr>
             <td>商品合計</td>
-            <!--<td>%= (@order.total_payment - @order.shipping_cost).to_s(:delimited, delimiter: ',') %></td>-->
-            <td><%= @order.total_payment %></td>
+            <td><%= (@order.total_payment - @order.shipping_cost).to_s(:delimited, delimiter: ',') %></td>
           </tr>
-
           <tr>
             <td>送料</td>
             <td><%= @order.shipping_cost.to_s(:delimited, delimiter: ',') %></td>
           </tr>
-
           <tr>
             <td>請求合計金額</td>
-            <!--<td>%= @order.total_payment.to_s(:delimited, delimiter: ',') %></td>-->
+            <td><%= @order.total_payment.to_s(:delimited, delimiter: ',') %></td>
           </tr>
         </tbody>
       </table>
