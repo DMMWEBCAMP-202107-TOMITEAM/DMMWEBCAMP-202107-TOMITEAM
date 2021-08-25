@@ -96,4 +96,42 @@
   }
 }
 
+main {
+    background-color: #FFEEFF;
+}
 
+// .container, .nav-item {
+//   font-family: "Hannari";
+// }
+
+.main-visual {
+  width: 100%; /* 横幅いっぱい */
+  height: 300px; /* 高さ300px */
+  background-image: url(11.png);
+  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
+  background-position: center; /* 背景画像を中央に配置 */
+
+}
+
+.main-visual-content {
+  width: 100%; /* 横幅40% */
+  height: 300px; /* 親の高さに揃える */
+  background-color: rgba(0, 0, 0, 0.2); /* 背景色を半透明の黒にする */
+  text-align: center; /* 文字を中央揃えにする */
+  padding-top: 105px; /* 上側の内側余白で垂直方向の位置を調整 */
+  margin: 0 auto;
+}
+
+.main-visual-text {
+  color: #fff; /* 文字色を白に変更 */
+  text-align: center;
+}
+
+.main-visual-name {
+  margin-top: 30px; /* 上側の外側の余白 */
+  color: #fff; /* 文字色を白に変更 */
+}
+
+.card  {
+  border: 0px none;
+}
