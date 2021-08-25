@@ -24,7 +24,6 @@ class Client::ClientsController < ApplicationController
     redirect_to root_path
   end
 
-
   private
 
   def client_params
