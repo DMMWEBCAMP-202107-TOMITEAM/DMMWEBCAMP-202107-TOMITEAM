@@ -1,3 +1,4 @@
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -24,3 +25,4 @@ module Naganocake
 
   end
 end
+

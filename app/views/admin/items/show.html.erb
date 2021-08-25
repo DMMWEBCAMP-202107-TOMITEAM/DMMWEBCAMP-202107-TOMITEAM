@@ -1,55 +1,52 @@
-<div class="show-wrapper">
-<div class="d-flex justify-content-center">
-　<div class='row'>
-　    <div class="p-3 mb-2 bg-light text-dark">
-
-      <h4>▼商品詳細</h4>
-       <div class="p-3 mb-2 bg-white text-dark">
-	    <div id="img_field">
-         <%= attachment_image_tag @item, :image, size: "300x200", fallback: "no_image.jpg" %>
-		</div>
-
-		     <div class="field">
+		<div class="show-wrapper">
+		 <div class="d-flex justify-content-center">
+		　 <div class='row'>
+			　 <div class="p-3 mb-2 bg-light text-dark">
+			    <h4>▼商品詳細</h4>
+			     <div class="p-3 mb-2 bg-white text-dark">
+				   <div id="img_field">
+			       <%= attachment_image_tag @item, :image, size: "300x200", fallback: "no_image.jpg" %>
+					  </div>
+				       <div class="field">
 						<p>商品名
 						<br>
 						<%= @item.name %></p>
-		       </div>
-		       <br>
-		      <div class="field">
-						<p>商品説明
+					   </div>
 						<br>
+					   <div class="field">
+						 <p>商品説明
+						 <br>
 						<%= @item.introduction %></p>
-		      </div>
-		      <br>
-
-		      <div class="field">
-						<p>ジャンル
-						<br>
+						</div>
+						 <br>
+				        <div class="field">
+						 <p>ジャンル
+					 	 <br>
 						<%= @item.genre.name %></p>
-		      </div>
-		      <br>
-		      <div class="field">
-						<p>税込価格
-						<br>
-						<%= @item.price %>円</p>
-		      </div>
-		      <br>
-		        <div class="field">
-						<p>販売ステータス
-						<br>
-			        <% if @item.sale_status == true %>
-					 <i class="fas fa-bullseye red"></i>販売中
-					<% elsif @item.sale_status == false %>
-					 <i class="fas fa-bullseye blue"></i>販売停止中
-					<% end %>
-			    	</p>
-		           </div>
+						 </div>
+						  <br>
+						 <div class="field">
+						 <p>税込価格
+						  <br>
+						 <%= @item.price %>円</p>
+						  </div>
+						  <br>
+						  <div class="field">
+						  <p>販売ステータス
+						  <br>
+						  <% if @item.sale_status == true %>
+						   <i class="fas fa-bullseye red"></i>販売中
+							<% elsif @item.sale_status == false %>
+							 <i class="fas fa-bullseye blue"></i>販売停止中
+							<% end %>
+							 </p>
+						  </div>
+			         <center><%= link_to "編集する", edit_admin_item_path(@item), data: {"turbolinks" => false}, class: "btn btn-outline-primary" %></center>
+				     </div>
+				   </div>
+			  </div>
+			 </div>
 
-		      	<center><%= link_to "編集する", edit_admin_item_path(@item), data: {"turbolinks" => false}, class: "glyphicon glyphicon-pencil btn btn-outline-primary pull-right" %></center>
 
-	     </div>
-	   </div>
-	</div>
-	</div>
 
 
