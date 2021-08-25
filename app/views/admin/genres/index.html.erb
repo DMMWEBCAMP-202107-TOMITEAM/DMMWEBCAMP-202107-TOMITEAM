@@ -3,34 +3,32 @@
 　    <div class="p-3 mb-2 bg-light text-dark">
        <h4>▼ジャンル一覧・追加</h4>
          <%= form_with model: @genre, url: '/admin/genres', local:true do |f| %>
-
-        <center><%= f.label :ジャンル名 %>
-        <%= f.text_field :name %>
-        <%= f.submit "新規登録", class: "glyphicon glyphicon-pencil btn btn-success pull-right" %>
+        <center>
+          <%= f.label :ジャンル名 %>
+          <%= f.text_field :name %>
+          <%= f.submit "新規登録", class: "btn btn-outline-primary" %>
         <% end %>
         </center>
-
-
-　　　　<div class="p-3 mb-2 bg-white text-dark">
-        <table class="table">
-        <thead>
-          <tr>
-          <th>ジャンル</th>
-          </tr>
-        </thead>
+<div class="p-3 mb-2 bg-white text-dark">
+         <table class="table">
+          <thead>
+           <tr>
+            <th>ジャンル</th>
+           </tr>
+          </thead>
 　　　　 <tbody>
           <% @genres.each do |genre| %>
             <tr>
-              <td><%= genre.name %></td>
-　　　　　　　 <td><%= link_to "編集する",edit_admin_genre_path(genre),class: "glyphicon glyphicon-pencil btn btn-success pull-right" %></td>
+             <td><%= genre.name %></td>
+　　　　　　 <td><%= link_to "編集する",edit_admin_genre_path(genre),class:"btn btn-outline-primary"  %></td>
             </tr>
           <% end %>
          </tbody>
         </table>
+       </div>
      </div>
+    </div>
   </div>
-</div>
-</div>
 
 
 
