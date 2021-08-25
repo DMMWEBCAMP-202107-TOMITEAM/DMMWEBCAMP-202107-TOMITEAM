@@ -29,7 +29,7 @@
         <td>
         <%= form_with model: @order, local:true, url:admin_order_path(@order) do |f| %>
         <%= f.select :order_status,[["入金待ち", :wait_for_payment], ["入金確認", :confirm_payment], ["製作中", :producing], ["発送準備", :ready_to_ship], ["発送済み", :complete_ship]] %>
-        <%= f.submit "更新", class: "btn btn-success" %>
+        <%= f.submit "更新", class: "btn btn-outline-primary" %>
         <% end %>
         </td>
       </tr>
@@ -60,7 +60,7 @@
             <td>
               <%= form_for (order_item), url:admin_order_item_path(order_item) do |f|  %>
               <%= f.select :making_status, [["着手不可", :not_startable], ["製作待ち", :wait], ["製作中", :producing], ["製作完了", :complete]]  %>
-              <%= f.submit '更新',class:"btn btn-success" %>
+              <%= f.submit '更新',class:"btn btn-outline-primary" %>
               <% end %>
             </td>
           </tr>
