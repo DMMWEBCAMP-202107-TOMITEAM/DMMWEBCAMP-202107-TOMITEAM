@@ -1,11 +1,11 @@
-  <div class="container">
-
-    <div class="row">
+  <div class="container mb-5">
+    <div class="mb-5">
+          <div class="row mb-5">
       <div class="col-xs-10">
         <br></br>
         <h2>ショッピングカート</h2>
         <br></br>
-        <div> <%= button_to "カートを空にする", cart_item_destroy_all_path(@cart_items), method: :delete, class:"btn btn-danger" %> </div>
+        <div class="mb-3"> <%= button_to "カートを空にする", cart_item_destroy_all_path(@cart_items), method: :delete, class:"btn btn-danger" %> </div>
       </div>
     </div>
 
@@ -46,9 +46,9 @@
 				<td>¥<%= @total_price.to_s(:delimited) %></td>
 			</tr>
 		</table>
-    <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
+    <div class="mb-3"><%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %></div>
 
-    <div class = "oedercheck">
+    <div class = "oedercheck mb-5 pb-5">
   		<% if @cart_items.count == 0  %>
   			<%= link_to "情報入力に進む", cart_items_path, class: "btn btn-success go-to-order" %>
   		<% else %>
@@ -56,3 +56,6 @@
   		<% end %>
 	  </div>
   </div>
+</div>
+
+
