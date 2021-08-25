@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
-   <h2>会員情報編集</h2>
-  </div>
+    <div class="p-3 mb-2 bg-light text-dark">
+   <h4>▼会員情報編集</h4>
+   <div class="p-3 mb-2 bg-white text-dark">
+
   <div class="col-12">
   <%= form_with model: @client, local:true, url: admin_client_path do |f| %>
 
@@ -55,7 +57,7 @@
       <div class="row text-right justify-content-center">
         <%= f.submit "変更を保存する" ,class: "btn btn-outline-primary " %>
       <% end %>
-
+     </div>
   </div>
 </div>
 
