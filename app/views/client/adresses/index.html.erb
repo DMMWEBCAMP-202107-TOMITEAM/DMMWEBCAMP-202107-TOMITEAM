@@ -5,14 +5,15 @@
 
     <%= form_for @address, url:adresses_path, method: :post do |f| %>
 
-      <div class = "row">
+     <div class = "row">
+
         <div class = "col-xs-3">
           <%= f.label "郵便番号(ハイフンなし)" %>
         </div>
         <div class = "col-xs-4">
           <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
         </div>
-      </div><br>
+     </div><br>
 
       <div class = "row">
         <div class = "col-xs-1">
