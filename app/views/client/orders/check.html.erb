@@ -43,7 +43,10 @@
     <h5>支払方法&emsp;&emsp;<%= @order.payment_method %></h5>
 
     <h5>お届け先&emsp;&emsp;〒<%= @order.postal_code %>&emsp;<%= @order.address %></h5>
-    <p><%= @order.name %></p>
+    <p><h5>
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      <%= @order.name %>
+    </h5></p>
 
   <%= form_with model: @order, url: orders_path, local: true do |f|%>
 		<%= f.submit '購入を確定する', class: 'btn btn-success' %>

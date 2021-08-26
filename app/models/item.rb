@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :introduction, presence: true
   validates :price, presence: true
-  validates :sale_status, presence: true
+  # validates :sale_status, presence: true
   
 
 def self.search_for(content)

@@ -41,11 +41,11 @@
     <div class="ml-5">
       <div class="text-center ml-5">
         <% if client_signed_in? %>
-          <%= link_to "NaganoCake", root_path, class: "navbar-brand text-body " %>
+          <%= link_to image_tag("naganocake.png", size: "400x120" ), root_path %>
         <% elsif admin_signed_in? %>
-          <%=  "NaganoCake" %>
+          <%= image_tag("naganocake.png", size: "400x120") %>
         <% else %>
-          <%= link_to "NaganoCake", root_path, class: "navbar-brand text-body " %>
+          <%= link_to image_tag("naganocake.png", size: "400x120" ), root_path %>
         <% end %>
       </div>
     </div>
@@ -54,7 +54,7 @@
         <ul class="navbar-nav ml-auto">
           <!--顧客がログインしている時-->
         <% if client_signed_in? %>
-          <div class="mt-4 mr-5"><li>ようこそ、<%= current_client.last_name %> さん！</li></div>
+          <div class="mt-4 mr-5"><li>おかえりなさいませ♡<p>♡<%= current_client.last_name %> さん♡</p></li></div>
           <li><a class="navi-item mt-1 mr-5" ><%= link_to ' マイページ',clients_my_page_path(current_client),class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
           <li><a class="navi-item mt-1 mr-5" ><%= link_to ' 商品一覧',items_path,class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
           <li><a class="navi-item mt-1 mr-5" ><%= link_to 'カート',cart_items_path,class: ' nav-link text-body btn btn-outline-secondary mr-3'%></a></li>

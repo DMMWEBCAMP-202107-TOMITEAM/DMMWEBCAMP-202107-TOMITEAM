@@ -4,8 +4,8 @@
   	<h2>配送先登録/一覧</h2><br>
 
     <%= form_for @address, url:adresses_path, method: :post do |f| %>
-    <br></br>
-  	<h2>配送先登録/一覧</h2><br>
+
+      <div class = "row">
         <div class = "col-xs-3">
           <%= f.label "郵便番号(ハイフンなし)" %>
         </div>
