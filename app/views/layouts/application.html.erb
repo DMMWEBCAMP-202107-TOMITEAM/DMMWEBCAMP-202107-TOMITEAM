@@ -28,11 +28,18 @@
 
   </head>
   <body class="drawer drawer--left">
-    <%= render 'layouts/header' %>
+
+    <header role="banner">
+      <%= render 'layouts/header' %>
+    </header>
+
     <main>
     <%= yield %>
     </main>
-    <%= render 'layouts/footer' %>
+
+    <footer>
+      <%= render 'layouts/footer' %>
+    </footer>
 
   </body>
 </html>
