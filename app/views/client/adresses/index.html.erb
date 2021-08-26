@@ -36,7 +36,7 @@
         </div>
 
         <div class = "col-xs-1">
-          <%= f.submit "新規登録", class:"btn btn-success" %>
+          <%= f.submit "新規登録", class: "moe-btn" %>
         </div>
 
     <% end %>
@@ -59,8 +59,8 @@
           <td><%= adress.address %></td>
           <td><%= adress.name %></td>
           <td>
-            <%= link_to "編集する", edit_adress_path(adress), method: :get , class: "btn btn-primary" %>
-            <%= link_to "削除する", adress_path(adress), method: :delete , class: "btn btn-danger" %>
+            <%= link_to "編集する", edit_adress_path(adress), method: :get , class: "moe-btn" %>
+            <%= link_to "削除する", adress_path(adress), method: :delete , class: "moe-btn" %>
           </td>
         </tr>
       <% end %>

@@ -21,7 +21,7 @@
 		            <%= f.select :amount,(1..20).each{ |i| p [i] } ,include_blank: ">>　個数選択"%>
 		            <%= f.hidden_field :item_id, value: @item.id %>
 		            <%= f.hidden_field :client_id, value: current_client.id %>
-		            <%= f.submit "カートに入れる", class: 'btn btn-primary'%>
+		            <%= f.submit "カートに入れる", class: "moe-btn"%>
 	            <% end %>
             <% end %>
           </div>

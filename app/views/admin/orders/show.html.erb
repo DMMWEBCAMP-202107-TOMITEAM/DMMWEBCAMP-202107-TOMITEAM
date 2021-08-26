@@ -61,7 +61,7 @@
             <td>
               <%= form_for (order_item), url:admin_order_item_path(order_item) do |f|  %>
               <%= f.select :making_status, [["着手不可", :not_startable], ["製作待ち", :wait], ["製作中", :producing], ["製作完了", :complete]]  %>
-              <%= f.submit '更新',class:"btn btn-outline-primary" %>
+              <%= f.submit '更新',class: "moe-btn" %>
               <% end %>
             </td>
           </tr>

@@ -6,7 +6,7 @@
         <center>
           <%= f.label :ジャンル名 %>
           <%= f.text_field :name %>
-          <%= f.submit "新規登録", class: "btn btn-outline-primary" %>
+          <%= f.submit "新規登録", class: "moe-btn" %>
         <% end %>
         </center>
        <div class="p-3 mb-2 bg-white text-dark">
@@ -20,7 +20,7 @@
           <% @genres.each do |genre| %>
             <tr>
              <td><%= genre.name %></td>
-　　　　　　 <td><%= link_to "編集する",edit_admin_genre_path(genre),class:"btn btn-outline-primary"  %></td>
+　　　　　　 <td><%= link_to "編集する",edit_admin_genre_path(genre),class: "moe-btn"  %></td>
             </tr>
           <% end %>
          </tbody>
