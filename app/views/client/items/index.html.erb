@@ -7,20 +7,22 @@
             <%= render 'genre', genres: @genres%>
           </div>
         </div>
-        <div class="col-8">
-          <h3 class="ml-5">商品一覧（全 <%= @items.count %> 件）</h3>
-          <div class="row pt-4 mb-5">
-            <% @items.each do |item| %>
-            <div class="card col-4 md-3 p-1 m-1">
-              <div>
-                <%= link_to item_path(item) do %>
-                  <%= attachment_image_tag item, :image, size: "300x200", fallback: "no_image.jpg", class: "card-img-top rounded"%><br>
-                <% end %>
-              </div>
-              <div class="card-body">
-                <p class="card-title"><%= item.name %></p>
-                <p class="card-text">¥<%= item.price %></p>
-              </div>
+
+      </div>
+      <div class="col-8">
+        <h3 class="ml-5">商品一覧（全 <%= @items.count %> 件）</h3>
+        <div class="row pt-4 mb-5">
+          <% @items.each do |item| %>
+          <div class="card col-4 md-3 p-1 m-1">
+            <div>
+              <%= link_to item_path(item) do %>
+                <%= attachment_image_tag item, :image, size: "300x200", fallback: "no_image.jpg", class: "card-img-top rounded"%><br>
+              <% end %>
+            </div>
+            <div class="card-body">
+              <p class="card-title"><%= item.name %></p>
+              <p class="card-text">¥<%= item.price.to_s(:delimited) %></p>
+
             </div>
             <% end %>
           </div>
