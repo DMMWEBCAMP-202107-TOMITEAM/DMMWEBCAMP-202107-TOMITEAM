@@ -1,15 +1,16 @@
 <div class="mt-5">
-  <div class="container">
+  <div class="container ">
     <div class="row">
-      <div class="col-md-2">
+      <div class="col mt-5 b-5">
         <%= render 'genre', genres: @genres%>
       </div>
-      <div class="col-md-4">
+      <div class="col mt-5 mb-5">
         <%= link_to item_path(@item) do %>
           <%= attachment_image_tag(@item, :image, :fill, 350, 250, fallback: "no_image.jpg") %>
         <% end %>
       </div>
       <div class="col-md-5 ml-5">
+        <div class="mt-5 mb-5">
         <h1><%= @item.name %></h1>
         <%= @item.introduction %><br>
         <div class="m-5">￥<%= @item.price.to_s(:delimited) %>(税込)</div>
@@ -23,7 +24,8 @@
 		            <%= f.submit "カートに入れる", class: 'btn btn-primary'%>
 	            <% end %>
             <% end %>
-        </div>
+          </div>
+          </div>
         </div>
       </div>
     </div>

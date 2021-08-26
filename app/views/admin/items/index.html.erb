@@ -1,4 +1,4 @@
-<div class="signup-wrapper">
+<div class="item-visual">
 
 　<div class="container bg-light text-dark">
     <h4>▼商品一覧</h4>
@@ -19,9 +19,8 @@
             </tr>
           </thead>
           <tbody>
-				   <% @items.each do |item| %>
-  				  <tr>
-
+				<% @items.each do |item| %>
+  		    <tr>
             <td class="col-２">
               <%= item.id %>
             </td>
@@ -50,12 +49,10 @@
           　 </tr>
         　　<% end %>
        　 　</tbody>
-      　 </table>
-    　</div>
-    </span>
-  </div>
-
- <%= paginate(@items) %>
-
-</div>
+          　 </table>
+        　</div>
+        </span>
+      </div>
+    <%= paginate(@items) %>
+ </div>
 </div>
