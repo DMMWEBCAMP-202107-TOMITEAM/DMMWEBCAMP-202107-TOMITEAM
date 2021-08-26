@@ -1,31 +1,32 @@
       <div class="group">
-        <dt><%= f.label :商品名,class: "control-label" %></dt>
+        <dt><%= f.label :♡商品名,class: "control-label" %></dt>
         <dd><%= f.text_field :name %></dd>
       </div>
 
       <div class="group">
-        <dt><%= f.label :商品説明,class: "control-label" %></dt>
+        <dt><%= f.label :♡商品説明,class: "control-label" %></dt>
         <dd><%= f.text_area :introduction %></dd>
       </div>
 
       <div class="group">
-        <dt><%= f.label :ジャンル,class: "control-label"  %></dt>
+        <dt><%= f.label :♡ジャンル,class: "control-label"  %></dt>
 　　　  <dd><%= f.collection_select :genre_id, Genre.all ,:id, :name, include_blank: "--選択してください--" %></dd>
  　　　</div>
 
       <div class="group">
-        <dt><%= f.label :税抜価格,class: "control-label"  %></dt>
+        <dt><%= f.label :♡税抜価格,class: "control-label"  %></dt>
         <dd><%= f.text_field :price %>円</dd>
       </div>
 
       <div class="group">
         <%= f.label :販売ステータス,class: "control-label"  %>
-
-            <%= f.radio_button :sale_status, true %>
+        <%= f.radio_button :sale_status, true %>
             <%= f.label :sale_status, "販売中" %>
             <%= f.radio_button :sale_status, false %>
             <%= f.label :sale_status, "販売停止" %>
-       </div>
+
+
+      </div>
 
 
 
