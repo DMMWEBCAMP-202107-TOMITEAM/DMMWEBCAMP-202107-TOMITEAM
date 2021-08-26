@@ -21,11 +21,11 @@
             </tr>
             <tr>
               <td>支払い方法</td>
-              <td><%= @order.total_payment.to_s(:delimited) %></td>
+              <td><%= @order.payment_method %></td>
             </tr>
             <tr>
               <td>ステータス</td>
-              <td><%= @order.order_status %></td>
+              <td><%= @order.order_status_i18n %></td>
             </tr>
           </tbody>
         </table>

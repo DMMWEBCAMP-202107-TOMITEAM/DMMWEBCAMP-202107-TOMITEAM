@@ -36,7 +36,7 @@ class Client::OrdersController < ApplicationController
         @order.name = "#{current_client.last_name}#{current_client.first_name}"
       elsif params[:order][:address_op] == "2"
         address = Adress.find(params[:order][:address_id])
-        @order.address = adress.address
+        @order.address = address.address
         @order.name = address.name
         @order.postal_code = address.postal_code
       else params[:order][:address_op] == "3"
