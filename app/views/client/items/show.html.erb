@@ -11,10 +11,10 @@
           <% end %>
         </div>
         <div class="col-md-5 ml-5">
-          <div class="mt-5 mb-5">
+          <div class="mt-5">
           <h1><%= @item.name %></h1>
-          <%= @item.introduction %><br>
-          <div class="m-5">￥<%= (@item.price*1.1).floor.to_s(:delimited) %>(税込)</div>
+          <h3><%= @item.introduction %></h3><br>
+          <h3><div class="m-5">￥<%= (@item.price*1.1).floor.to_s(:delimited) %>(税込)</div></h3>
           <div class="rbtn-toolbar m-3">
             <div class="btn-group">
               <% if client_signed_in? %>
