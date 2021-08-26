@@ -1,10 +1,11 @@
 class Client::CartItemsController < ApplicationController
-
+before_action :authenticate_client!
   def index
     @cart_items = current_client.cart_items.all
     # @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
     @total_price = 0
     @cart_items.each do |cart_item|
+
       @subtotal = (Item.find(cart_item.item_id).price.floor * 1.1 * cart_item.amount).floor
       @total_price += @subtotal
     end
