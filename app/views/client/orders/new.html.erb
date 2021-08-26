@@ -21,7 +21,7 @@
                 <%= f.radio_button :address_op, "1", checked: "checked" %>
                 <%= f.label :address, "ご自身の住所" %>
                 <p>&emsp;〒<%= @client.postal_code %>&emsp;<%= @client.address %></p>
-                <p>&emsp;<%= @client.first_name %>&emsp;<%= @client.last_name %></p>
+                <p>&emsp;<%= @client.last_name %>&emsp;<%= @client.first_name %></p>
               </div>
               <div class="radio">
                 <%= f.radio_button :address_op, "2" %>
