@@ -18,7 +18,7 @@
             </div>
             <div class="card-body">
               <p class="card-title"><%= item.name %></p>
-              <p class="card-text">¥<%= item.price %></p>
+              <p class="card-text">¥<%= item.price.to_s(:delimited) %></p>
             </div>
           </div>
           <% end %>
