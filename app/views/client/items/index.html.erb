@@ -1,11 +1,13 @@
- <div class="m-5">
-  <div class="container">
-    <div class="row pt-4 mb-5">
-      <div class="col-4">
-        <div class="genrebox">
-          <%= render 'genre', genres: @genres%>
+<div class="font">
+   <div class="m-5">
+    <div class="container">
+      <div class="row pt-4 mb-5">
+        <div class="col-4">
+          <div class="genrebox">
+            <%= render 'genre', genres: @genres%>
+          </div>
         </div>
-      </div>
+      <!--</div>-->
       <div class="col-8">
         <h3 class="ml-5">商品一覧（全 <%= @items.count %> 件）</h3>
         <div class="row pt-4 mb-5">
@@ -18,13 +20,15 @@
             </div>
             <div class="card-body">
               <p class="card-title"><%= item.name %></p>
-              <p class="card-text">¥<%= item.price %></p>
+              <p class="card-text">¥<%= item.price.to_s(:delimited) %></p>
             </div>
+
+            </div>
+            <% end %>
           </div>
-          <% end %>
         </div>
+        <%= paginate @items %>
       </div>
-      <%= paginate @items %>
     </div>
   </div>
 </div>

@@ -147,8 +147,38 @@ img {
 }
 
 
+
 .moe-btn {
   background-color: #FFAB91;
   color: #E91E63;
   border-radius: 10px;
+}
+
+header{
+  background-color:hotpink;
+}
+
+footer{
+  background-color:hotpink;
+}
+
+
+.font {
+
+　text-align: center;
+  color: #fff;
+  text-shadow: 0 0 15px #FF6694;
+
+  font-family: 'Wawati SC',sans-serif;
+
+}
+
+@import url(https://fonts.googleapis.com/css?family=Chewy);
+
+.list-group-item:first-child {
+    background: pink;
+}
+
+.card-body {
+    background: pink;
 }

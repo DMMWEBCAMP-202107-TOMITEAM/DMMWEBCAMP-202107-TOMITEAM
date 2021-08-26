@@ -1,10 +1,11 @@
+<div class="font">
 <header role="banner">
   <!--<button type="button" class="drawer-toggle drawer-hamburger mt-4 ml-4">-->
   <!--  <span class="sr-only">toggle navigation</span>-->
   <!--  <span class="drawer-hamburger-icon"></span>-->
   <!--</button>-->
 
-  <div class="border-bottom">
+  <div class="border-bottom pt-3">
     <!--<nav class="drawer-nav" role="navigation">-->
     <!--  <h2 class="ml-5 mt-4">MENU</h2>-->
     <!--  <ul class="drawer-menu">-->
@@ -54,11 +55,11 @@
         <ul class="navbar-nav ml-auto">
           <!--顧客がログインしている時-->
         <% if client_signed_in? %>
-          <div class="mt-4 mr-5"><li>おかえりなさいませ♡<p>♡<%= current_client.last_name %> さん♡</p></li></div>
-          <li><a class="navi-item mt-1 mr-5" ><%= link_to ' マイページ',clients_my_page_path(current_client),class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
-          <li><a class="navi-item mt-1 mr-5" ><%= link_to ' 商品一覧',items_path,class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
-          <li><a class="navi-item mt-1 mr-5" ><%= link_to 'カート',cart_items_path,class: ' nav-link text-body btn btn-outline-secondary mr-3'%></a></li>
-          <li><a class="navi-item mt-1 mr-5" ><%= link_to ' ログアウト', destroy_client_session_path, method: :delete,class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
+          <div class="mt-4 mr-5"><li class="text-white"><h4>おかえりなさいませ♡</h4><h4><p>♡<%= current_client.last_name %> 様♡</p></h4></li></div>
+          <li class="text-light"><a class="navi-item mt-1 mr-5 text-light" ><%= link_to ' マイページ',clients_my_page_path(current_client),class: 'nav-link text-body btn btn-outline-light mr-3' %></a></li>
+          <li><a class="navi-item mt-1 mr-5" ><%= link_to ' 商品一覧',items_path,class: 'nav-link text-body btn btn-outline-light mr-3' %></a></li>
+          <li><a class="navi-item mt-1 mr-5" ><%= link_to 'カート',cart_items_path,class: ' nav-link text-body btn btn-outline-light mr-3'%></a></li>
+          <li><a class="navi-item mt-1 mr-5" ><%= link_to ' ログアウト', destroy_client_session_path, method: :delete,class: 'nav-link text-body btn btn-outline-light mr-3' %></a></li>
           <!--<li class="navi-item">%= link_to '',clients_my_page_path(current_client),class: 'fas fa-user-circle fa-2x nav-link text-body m-3 size' %></li>-->
           <!--<li class="navi-item">%= link_to '',cart_items_path,class: 'fas fa-shopping-cart fa-2x nav-link text-body m-3 '%></li>-->
           <li><div class="input-group mt-4 pl-4">
@@ -67,11 +68,11 @@
 
           <!--管理者がログインしている時-->
         <% elsif admin_signed_in? %>
-          <li><a class="drawer-brand mt-4 mr-5" ><%= link_to "商品一覧", admin_items_path, class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
-          <li><a class="drawer-brand mt-4 mr-5" ><%= link_to "会員一覧", admin_clients_path, class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
-          <li><a class="drawer-brand mt-4 mr-5" ><%= link_to "注文履歴一覧", admin_orders_path, class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
-          <li><a class="drawer-brand mt-4 mr-5" ><%= link_to "ジャンル一覧", admin_genres_path,  class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
-          <li><a class="drawer-brand mt-4 mr-5" ><%= link_to ' ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
+          <li><a class="drawer-brand mt-4 mr-5" ><%= link_to "商品一覧", admin_items_path, class: 'nav-link text-body btn btn-outline-light mr-3' %></a></li>
+          <li><a class="drawer-brand mt-4 mr-5" ><%= link_to "会員一覧", admin_clients_path, class: 'nav-link text-body btn btn-outline-light mr-3' %></a></li>
+          <li><a class="drawer-brand mt-4 mr-5" ><%= link_to "注文履歴一覧", admin_orders_path, class: 'nav-link text-body btn btn-outline-light mr-3' %></a></li>
+          <li><a class="drawer-brand mt-4 mr-5" ><%= link_to "ジャンル一覧", admin_genres_path,  class: 'nav-link text-body btn btn-outline-light mr-3' %></a></li>
+          <li><a class="drawer-brand mt-4 mr-5" ><%= link_to ' ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-body btn btn-outline-light mr-3' %></a></li>
 
           <!--会員一覧-->
           <!--<li class="navi-item">%= link_to "", admin_clients_path, class: 'fas fa-user-circle fa-2x nav-link text-body m-3 size' %></li>-->
@@ -84,10 +85,10 @@
           <!--ログインしていない時-->
         <% else %>
           <li></li>
-          <li><a class="drawer-brand mt-1 mr-5" ><%= link_to ' About',home_about_path,class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
-          <li><a class="drawer-brand mt-1 mr-5" ><%= link_to ' 商品一覧',items_path,class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
-          <li><a class="drawer-brand mt-1 mr-5" ><%= link_to '新規登録', new_client_registration_path,class: 'nav-link text-body btn btn-outline-secondary mr-3' %></a></li>
-          <li><a class="drawer-brand mt-1 mr-5" ><%= link_to ' ログイン', new_client_session_path ,class: 'nav-link text-body btn btn-outline-secondary mr-3'%></a></li>
+          <li><a class="drawer-brand mt-1 mr-5" ><%= link_to ' About',home_about_path,class: 'nav-link text-body btn btn-outline-light mr-3' %></a></li>
+          <li><a class="drawer-brand mt-1 mr-5" ><%= link_to ' 商品一覧',items_path,class: 'nav-link text-body btn btn-outline-light mr-3' %></a></li>
+          <li><a class="drawer-brand mt-1 mr-5" ><%= link_to '新規登録', new_client_registration_path,class: 'nav-link text-body btn btn-outline-light mr-3' %></a></li>
+          <li><a class="drawer-brand mt-1 mr-5" ><%= link_to ' ログイン', new_client_session_path ,class: 'nav-link text-body btn btn-outline-light mr-3'%></a></li>
           <!--ログイン画面-->
           <!--<li class="navi-item">%= link_to '', new_client_session_path ,class: 'fas fa-user-circle fa-2x nav-link text-body m-3 size' %></li>-->
           <!--ログイン画面-->
@@ -101,3 +102,4 @@
       </div>
     </nav>
   </div>
+</div>
