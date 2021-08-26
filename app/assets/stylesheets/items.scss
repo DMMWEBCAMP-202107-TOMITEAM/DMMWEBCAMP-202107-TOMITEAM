@@ -41,15 +41,48 @@ dl dd{
 
 .genres-visual{
   background-image: url(640.jpeg);
-
 }
-
 
 
 .new-visual{
   background-image: url(21.png);
 
+}
+
+.font {
+
+　text-align: center;
+  color: #fff;
+  text-shadow: 0 0 15px #FF6694;
+
+font-family: 'Wawati SC',sans-serif;
 
 }
 
+@import url(https://fonts.googleapis.com/css?family=Chewy);
 
+
+.heart {
+  font-size: 80px;
+  color: #FF3D67;
+  -webkit-animation: heart-beats .3s infinite alternate;
+  animation: heart-beats .3s infinite alternate;
+  transform-origin: center;
+}
+
+
+@-webkit-keyframes heart-beats {
+  to { -webkit-transform: scale(1.1); }
+}
+@keyframes heart-beats {
+  to { transform: scale(1.1); }
+}
+
+body {
+  text-align: center;
+}
+h1 {
+  font-family: 'Chewy', cursive;
+  margin-top: 0;
+  color: #FF9EB6;
+}
