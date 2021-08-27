@@ -33,7 +33,7 @@
                 <td><%= order.total_payment.to_s(:delimited) %></td>
                 <td><%= order.order_status_i18n %></td>
                 <td>
-                  <%= link_to "表示する",order_path(order), class: 'btn btn-primary' %>
+                  <%= link_to "表示する",order_path(order), class: 'moe-btn' %>
                 </td>
               </tr>
             <% end %>
