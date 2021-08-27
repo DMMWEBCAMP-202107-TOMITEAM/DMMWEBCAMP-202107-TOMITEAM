@@ -96,7 +96,7 @@
   }
 }
 
-main {
+.main {
     background-color: #FFEEFF;
     margin-padding: 30px; /* 下側の外側の余白 */
     min-height:700px;
@@ -146,8 +146,6 @@ img {
 	border-radius: 20px;
 }
 
-
-
 .moe-btn {
   background-color: #FFAB91;
   color: #E91E63;
@@ -160,6 +158,10 @@ img {
   border-radius: 10px;
 }
 
+
+
+
+
 header{
   background-color:hotpink;
 }
@@ -170,11 +172,9 @@ footer{
 
 
 .font {
-
-　text-align: center;
+  text-align: center;
   color: #000000;
   text-shadow: 0 0 15px #FF6694;
-
   font-family: 'Wawati SC',sans-serif;
 
 }
@@ -187,4 +187,9 @@ footer{
 
 .card-body {
     background: pink;
+}
+
+.drawer-brand  {
+  color: #000000;
+
 }
