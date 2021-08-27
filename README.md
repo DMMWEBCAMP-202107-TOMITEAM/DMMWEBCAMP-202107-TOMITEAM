@@ -6,22 +6,22 @@ DMM WEBCAMP　2ヶ月目のチーム開発課題として洋菓子店のECサイ
 UI等にも拘った。
 
 ## 環境
-・Ruby2.6.3
-・Rails5.2.6
-・HTML5
+・Ruby2.6.3</br>
+・Rails5.2.6</br>
+・HTML5</br>
 ・CSS3
 
 ## Gem
-・devise
-・bootstrap5
-・font-awesome
-・refile/refile-mini_magic
-・jquery-rails
+・devise</br>
+・bootstrap5</br>
+・font-awesome</br>
+・refile/refile-mini_magic</br>
+・jquery-rails</br>
 ・kaminari
 
 ## 開発メンバー（TOMI）
-・田中宥貴（たな）
-・奥田裕樹（おっくん）
-・三根大典（みね）
+・田中宥貴（たな）</br>
+・奥田裕樹（おっくん）</br>
+・三根大典（みね）</br>
 ・伊藤慶（ぶんちょう）
 
