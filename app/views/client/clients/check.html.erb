@@ -1,3 +1,4 @@
+<div class="font">
 <div class="container">
   <div class="row mt-5">
     <div class="col-12 text-center font-weight-bold" >本当に退会しますか？</div>
@@ -15,4 +16,5 @@
     <%= link_to "退会しない", clients_my_page_path(current_client), class:"mr-3 btn btn-outline-success" %>
     <%= link_to "退会する", clients_out_path(@client), method: :patch, "data-confirm" => "本当に退会しますか？", class:"ml-3 btn btn-outline-danger" %>
   </div>
+</div>
 </div>
