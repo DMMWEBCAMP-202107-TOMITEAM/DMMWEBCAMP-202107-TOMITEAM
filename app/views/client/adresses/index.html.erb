@@ -39,7 +39,7 @@
         </div>
 
         <div class = "col-xs-1">
-         
+
           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           <%= f.submit "新規登録", class: "moe-btn" %>
 
@@ -66,7 +66,7 @@
           <td><%= adress.name %></td>
           <td>
             <%= link_to "編集する", edit_adress_path(adress), method: :get , class: "moe-btn" %>
-            <%= link_to "削除する", adress_path(adress), method: :delete , class: "moe-btn" %>
+            <%= link_to "削除する", adress_path(adress), method: :delete , class: "nae-btn" %>
           </td>
         </tr>
       <% end %>

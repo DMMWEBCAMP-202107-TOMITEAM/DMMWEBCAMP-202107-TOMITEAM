@@ -15,6 +15,13 @@
  */
 @import "bootstrap";
 
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
 .navbar-brand {
     font-size: 50px;
     font-family: serif;
@@ -188,3 +195,5 @@ footer{
 .card-body {
     background: pink;
 }
+
+

@@ -32,7 +32,7 @@
         <td>
         <%= form_with model: @order, local:true, url:admin_order_path(@order) do |f| %>
         <%= f.select :order_status,[["入金待ち", :wait_for_payment], ["入金確認", :confirm_payment], ["製作中", :producing], ["発送準備", :ready_to_ship], ["発送済み", :complete_ship]] %>
-        <%= f.submit "更新", class: "btn btn-outline-primary" %>
+        <%= f.submit "更新", class: "moe-btn" %>
         <% end %>
         </td>
       </tr>

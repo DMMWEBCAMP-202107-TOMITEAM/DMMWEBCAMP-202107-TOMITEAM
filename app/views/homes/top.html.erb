@@ -11,10 +11,12 @@
       <div class="main-visual ml-4">
         <div class="main-visual-content">
           <p class="main-visual-text">
+           <h3 class="text-light">
            ようこそ、ながのCAKEへ！</br>
            このサイトは、ケーキ販売のECサイトになります。</br>
            会員でない方も商品の閲覧はできますが、</br>
            購入には会員登録が必要になります。</br>
+           </h3>
           </p>
         </div>
       </div>
@@ -34,7 +36,7 @@
         <% end %>
       </div>
 
-      <p class="text-right pt-3"><%= link_to "全ての商品を見る>", items_path(@customer) %></p>
+      <p class="text-right pt-3"><%= link_to "全ての商品を見る>", items_path(@customer), class: "moe-btn" %></p>
 
     </div>
   </div>
