@@ -6,7 +6,7 @@
         <br></br>
         <h2>ショッピングカート</h2>
         <br></br>
-        <div class="mb-3"> <%= button_to "カートを空にする", cart_item_destroy_all_path(@cart_items), method: :delete, class:"btn btn-danger" %> </div>
+        <div class="mb-3"> <%= button_to "カートを空にする", cart_item_destroy_all_path(@cart_items), method: :delete, class:"nae-btn" %> </div>
       </div>
     </div>
 
@@ -29,11 +29,11 @@
             <td>
               <%= form_with model: cart_item, url: cart_item_path(id: cart_item.id), local: true do |f| %>
                 <%= f.number_field :amount, min: 1, max: 20 %>
-                <%= f.submit "変更" %>
+                <%= f.submit "変更", class: "moe-btn" %>
               <% end %>
             </td>
             <td>¥<%= (taxin_price(cart_item.item.price) * cart_item.amount).to_s(:delimited) %></td>
-            <td><%= link_to "削除する", cart_item_path(id: cart_item.id), method: :delete, class: "btn btn-danger"  %></td>
+            <td><%= link_to "削除する", cart_item_path(id: cart_item.id), method: :delete, class: "nae-btn"  %></td>
           </tr>
         <% end %>
       </table>
@@ -47,13 +47,13 @@
 				<td>¥<%= @total_price.to_s(:delimited) %></td>
 			</tr>
 		</table>
-    <div class="mb-3"><%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %></div>
+    <div class="mb-3"><%= link_to "買い物を続ける", root_path, class: "moe-btn" %></div>
 
     <div class = "oedercheck mb-5 pb-5">
   		<% if @cart_items.count == 0  %>
-  			<%= link_to "情報入力に進む", cart_items_path, class: "btn btn-success go-to-order" %>
+  			<%= link_to "情報入力に進む", cart_items_path, class: "moe-btn" %>
   		<% else %>
-  			<%= link_to "情報入力に進む", new_order_path, class: "btn btn-success go-to-order" %>
+  			<%= link_to "情報入力に進む", new_order_path, class: "moe-btn" %>
   		<% end %>
 	  </div>
   </div>

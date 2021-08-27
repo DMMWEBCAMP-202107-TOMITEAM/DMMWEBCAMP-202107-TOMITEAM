@@ -15,6 +15,13 @@
  */
 @import "bootstrap";
 
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
 .navbar-brand {
     font-size: 50px;
     font-family: serif;
@@ -154,6 +161,12 @@ img {
   border-radius: 10px;
 }
 
+.nae-btn {
+  background-color: #64B5F6;
+  color: #CDDC39;
+  border-radius: 10px;
+}
+
 header{
   background-color:hotpink;
 }
@@ -182,3 +195,5 @@ footer{
 .card-body {
     background: pink;
 }
+
+
