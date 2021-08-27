@@ -50,7 +50,7 @@
     </h5></p>
 
   <%= form_with model: @order, url: orders_path, local: true do |f|%>
-		<%= f.submit '購入を確定する', class: 'btn btn-success' %>
+		<%= f.submit '購入を確定する', class: 'moe-btn' %>
 		<%= f.hidden_field :client_id, :value => @order.client_id %>
     <%= f.hidden_field :payment_method, :value => @order.payment_method %>
     <%= f.hidden_field :postal_code, :value => @order.postal_code %>

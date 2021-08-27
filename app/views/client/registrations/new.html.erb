@@ -78,7 +78,7 @@
 
       <div class="row">
         <div class="col-lg-6">
-          <%= f.submit "新規登録", class: "btn btn-success" %>
+          <%= f.submit "新規登録", class: "moe-btn" %>
         </div>
       </div>
 
@@ -86,7 +86,7 @@
       <h3>既に登録済みの方</h3>
       <div class="col-sm-3">
         <%- if controller_name != 'sessions' %>
-          <%= link_to "こちら", new_session_path(resource_name) %>
+          <%= link_to "こちら", new_session_path(resource_name), class: "moe-btn" %>
         <% end %>
         からログインしてください
       </div>
