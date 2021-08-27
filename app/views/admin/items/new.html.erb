@@ -1,26 +1,32 @@
-        <div class='container'>
-          <h2 class="head-line">商品新規登録</h2>
-            <div class='row'>
-              <%= form_with model: @item, url: '/admin/items', local:true do |f| %>
-               <div class=col-6>
-                 <div class="img_field">
-                  <%= f.label :商品画像,class: "control-label"  %>
-                  <%=f.attachment_field :image %>
-                  </div>
+<div class="font">
+ <div class="new-visual">
+  <div class="container">
+   <div class="row justify-content-center">
+     <div class="p-3 mb-2 bg-light text-dark">
+      <h4>♡商品新規登録</h4>
+       <div class="col-12 mx-auto">
+        <div class="p-3 mb-2 bg-white text-dark">
+         <dl>
+           <div class=col-10>
+            <div class="img_field">
+             <%= form_with model: @item, url: '/admin/items', local:true do |f| %>
+              <dt><%= f.label :♡商品画像,class: "control-label"  %></dt>
+              <dd><%=f.attachment_field :image %></dd>
+             <%= render "item", f: f %>
+            <div class="group" >
 
-                  <%= render "item", f: f %>
+              <center><%= f.submit "新規登録",class: "moe-btn" %></center>
+               <center><div class="heart">&#9829;</div></center>
 
-                <div class="form-group">
-                  <%= f.submit "新規登録", class: "glyphicon glyphicon-pencil btn btn-success pull-right" %>
-                </div>
-                  <% end %>
-             </div>
-           </div>
+            </div>
+            <% end %>
+         </dl>
+            </div>
+          </div>
         </div>
-
-
-
-
-
-
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
 

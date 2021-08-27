@@ -1,3 +1,92 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.h4 {
+  padding: 15px;
+}
+
+
+.outer {
+  margin: 20px;
+  padding: 20px;
+}
+
+.form-group {
+  padding: 40px;
+}
+
+.groupp {
+   padding: 40px;
+}
+
+
+dl dt{
+  width: 165px;
+  padding:10px 0;
+  float:left;
+  clear:both;
+}
+
+dl dd{
+  padding:20px 0;
+}
+
+
+.item-visual{
+  background-image: url(640.jpeg);
+
+}
+
+.genres-visual{
+  background-image: url(640.jpeg);
+  
+  
+}
+
+
+.new-visual{
+  background-image: url(21.png);
+
+}
+
+.font {
+
+　text-align: center;
+  color: #fff;
+  text-shadow: 0 0 15px #FF6694;
+
+font-family: 'Wawati SC',sans-serif;
+
+}
+
+@import url(https://fonts.googleapis.com/css?family=Chewy);
+
+
+.heart {
+  font-size: 80px;
+  color: #FF3D67;
+  -webkit-animation: heart-beats .3s infinite alternate;
+  animation: heart-beats .3s infinite alternate;
+  transform-origin: center;
+}
+
+
+@-webkit-keyframes heart-beats {
+  to { -webkit-transform: scale(1.1); }
+}
+@keyframes heart-beats {
+  to { transform: scale(1.1); }
+}
+
+body {
+  text-align: center;
+}
+h1 {
+  font-family: 'Chewy', cursive;
+  margin-top: 0;
+  color: #FF9EB6;
+}
+
+

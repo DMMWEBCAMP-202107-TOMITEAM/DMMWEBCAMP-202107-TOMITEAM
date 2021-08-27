@@ -6,13 +6,40 @@
     <%= csp_meta_tag %>
 
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-    <%= render 'layouts/header' %>
-    <%= yield %>
+    <script src="https://kit.fontawesome.com/a5035aaf79.js" crossorigin="anonymous"></script>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+    <!-- drawer.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
+    <!-- jquery &amp; iScroll -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+    <!-- iScroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+    <!-- drawer.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('.drawer').drawer();
+        });
+    </script>
+
+  </head>
+  <body class="drawer drawer--left">
+
+    <header role="banner">
+      <%= render 'layouts/header' %>
+    </header>
+
+    <main>
+    <%= yield %>
+    </main>
+
+    <footer>
+      <%= render 'layouts/footer' %>
+    </footer>
 
   </body>
 </html>

@@ -1,10 +1,11 @@
-<h1>管理者側顧客一覧</h1>
-<div class="container">
- <div class="row">
-    <div class="col-xs-10 col-xs-offset-1">
-      <h2>会員一覧</h2>
+ <div class="font">
+  <div class="item-visual">
+ 　<div class="container bg-light text-dark">
 
-      <table class="table">
+   <h4>▼会員一覧</h4>
+     <div class="p-3 mb-2 bg-white text-dark">
+      <div class="col-12">
+       <table class="table table table-striped">
         <thead>
           <tr>
             <th>会員ID</th>
@@ -28,10 +29,11 @@
                 <% end %>
               </td>
             </tr>
-            <% end %>
-
+          <% end %>
         </tbody>
       </table>
+      <%= paginate @clients %>
     </div>
    </div>
   </div>
+ </div>

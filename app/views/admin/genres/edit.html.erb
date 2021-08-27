@@ -1,14 +1,28 @@
-<div class='container'>
-  <h2>ジャンル編集</h2>
-    <div class='row'>
-     <div class="col-6">
-      <div class="form-group col-10">
-        <%= form_with model:@genre, url: '/admins/genre', local:true do |f| %>
-         <%= f.label :ジャンル名 %>
-         <%= f.text_field :name,class: "col-4" %>
-         <%= f.submit "変更を保存", class: "glyphicon glyphicon-pencil btn btn-success pull-right" %>
+    <div class="font">
+    <div class="container bg-light text-dark">
+　    <div class="p-3 mb-2 bg-light text-dark">
+       <div class="outer">
+        <center>
+         <div class="h4">▼ジャンル編集</h4></div>
+          <div class="p-3 mb-2 bg-white text-dark">
+           <div class="form-group col-5">
+            <%= form_with model: @genre, url: admin_genre_path, local: true do |f| %>
+       　　　　<%= f.label :ジャンル名 %>
+       　　　　<%= f.text_field :name%>
+           <div class="groupp">
+          <center><%= f.submit "変更を保存", class: "moe-btn" %></center>
+         </div>
          <% end %>
+         </div>
+        </div>
         </div>
       </div>
-    </div>
- </div>
+     </div>
+  </div>
+
+
+
+
+
+
+

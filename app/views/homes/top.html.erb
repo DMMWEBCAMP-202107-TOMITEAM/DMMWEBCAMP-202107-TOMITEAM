@@ -1,12 +1,43 @@
-<div class='container'>
-  <div class='row'>
-    <div class='mx-auto col-12'>
-      <div class="text-center m-5">
-        ようこそ、ながのCAKEへ！<br>
-        このサイトは、ケーキ販売のECサイトになります。<br>
-        会員でない方も商品の閲覧はできますが、<br>
-        購入は会員登録が必要になります
+<div class="font">
+<div class='container px-5 px-sm-0 mt-3 mb-5 pt-5'>
+  <div class='row pt-2'>
+
+    <div class="col-2">
+        <%= render 'client/items/genre', genres: @genres %>
+    </div>
+
+    <div class='col-10 text-center'>
+
+      <div class="main-visual ml-4">
+        <div class="main-visual-content">
+          <p class="main-visual-text">
+           ようこそ、ながのCAKEへ！</br>
+           このサイトは、ケーキ販売のECサイトになります。</br>
+           会員でない方も商品の閲覧はできますが、</br>
+           購入には会員登録が必要になります。</br>
+          </p>
+        </div>
       </div>
+
+      <h3 class="pt-4">新着商品</h3>
+      <div class="row pt-4">
+        <% @items.each do |item| %>
+        <div class="card col-md-3 ml-auto p-1">
+          <%= link_to item_path(item.id) do %>
+          <%= attachment_image_tag item, :image, :fill, 120, 100, class: "card-img-top"%>
+          <% end %>
+          <div class="card-body">
+            <p class="card-title"><%= item.name %></p>
+            <p class="card-text">¥<%= item.price.to_s(:delimited) %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+      <p class="text-right pt-3"><%= link_to "全ての商品を見る>", items_path(@customer) %></p>
+
     </div>
   </div>
+ </div>
 </div>
+

@@ -1,14 +1,17 @@
-<h2>Log in</h2>
+<div class="container background-color: #FFEEFF;">
+ <br></br>
+ <br></br>
+<h2>管理者Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :size=>"40",  placeholder: "sample@example.com" %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", :size=>"40" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -19,8 +22,11 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "moe-btn" %>
   </div>
 <% end %>
 
 <%= render "admin/shared/links" %>
+
+
+</div>

@@ -1,15 +1,27 @@
-        <div class='container'>
-          <h2>商品編集</h2>
-            <div class='row'>
-              <%= form_with model:@item, url: '/admin/items', local:true do |f| %>
-               <div class=col-6>
-                 <div class="img_field">
-                  <%= f.label :商品画像,class: "control-label"  %>
-                  <%=f.attachment_field :image_id %>
-                  </div>
+<div class="font">
+<div class="outer">
+ <div class="container">
+  <div class="row justify-content-center">
+　 <div class="p-3 mb-2 bg-light text-dark">
+    <h4>♡️商品編集</h4>
+     <div class="p-3 mb-2 bg-white text-dark">
+        <dl>
+         <%= form_with model: @item, url: admin_item_path, local:true do |f| %>
+          <div class=col-12>
+           <div class="img_field">
+            <dt><%= f.label :♡商品画像,class: "control-label"  %></dt>
+            <dd><%=f.attachment_field :image %></dd>
+                <%= render "item", f: f %>
+       </dl>
+           <div class="formm-group">
+            <center><%= f.submit "変更を保存", class: "moe-btn" %></center>
+            </div>
+              <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
 
 
-                  <% end %>
-             </div>
-           </div>
-        </div>

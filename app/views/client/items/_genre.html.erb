@@ -1,0 +1,7 @@
+
+  <ul class="list-group">
+    <li class="list-group-item"><strong>ジャンル検索</strong></li>
+    <% @genres.each do |genre| %>
+      <li class="list-group-item"><%= link_to genre.name, search_path('search[value]': genre.id) %></li>
+    <% end %>
+  </ul>

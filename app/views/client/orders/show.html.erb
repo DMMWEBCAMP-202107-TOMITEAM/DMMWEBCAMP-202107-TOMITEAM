@@ -1,0 +1,74 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10">
+        <br></br>
+        <h1>注文履歴詳細</h1>
+        <br></br>
+        <h5>注文情報</h5>
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td>注文日</td>
+              <td><%= @order.created_at.strftime('%y/%m/%d') %></td>
+            </tr>
+            <tr>
+              <td>配送先</td>
+              <td>
+                <p>〒<%= @order.postal_code %></p>
+                <p><%= @order.address %></p>
+                <p><%= @order.name %></p>
+              </td>
+            </tr>
+            <tr>
+              <td>支払い方法</td>
+              <td><%= @order.payment_method %></td>
+            </tr>
+            <tr>
+              <td>ステータス</td>
+              <td><%= @order.order_status_i18n %></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h5>注文内容</h5>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>商品</th>
+              <th>単価（税込）</th>
+              <th>個数</th>
+              <th>小計</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @order_items.each do |order_item| %>
+              <tr>
+                <td><%= order_item.item.name %></td>
+                <td><%= (order_item.price*1.1).floor.to_s(:delimited) %></td>
+                <td><%= order_item.amount %></td>
+                <td><%= (order_item.price * 1.1 * order_item.amount).floor.to_s(:delimited) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <h5>請求情報</h5>
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td>商品合計</td>
+              <td><%= @sum.floor.to_s(:delimited) %></td>
+            </tr>
+            <tr>
+              <td>配送料</td>
+              <td> <%= @order.shipping_cost %></td>
+            </tr>
+            <tr>
+              <td>ご請求額</td>
+              <td><%= @order.total_payment.to_s(:delimited) %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
