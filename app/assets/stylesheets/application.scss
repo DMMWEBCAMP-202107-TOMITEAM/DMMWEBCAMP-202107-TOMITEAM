@@ -96,10 +96,10 @@
   }
 }
 
-main {
+.main-color {
     background-color: #FFEEFF;
     margin-padding: 30px; /* 下側の外側の余白 */
-    min-height:700px;
+    // min-height:700px;
 }
 
 // .container, .nav-item {
@@ -130,7 +130,7 @@ main {
 }
 
 .main-visual-name {
-  margin-top: 30px; /* 上側の外側の余白 */
+  margin-top: 0px; /* 上側の外側の余白 */
   color: #fff; /* 文字色を白に変更 */
 }
 
