@@ -1,9 +1,12 @@
-<% if @records.empty? %>
-  <div class="text-center" style="margin:30px;">
-  <p style="color:red;">該当はありません</p></div>
-<% end %>
-<% if @model == 'client' %>
-  <%= render 'admin/clients/index', clients: @records %>
-<% else %>
-  <%= render 'admin/items/index', items: @records %>
-<% end %>
+<div class="font">
+    <% if @records.empty? %>
+    <div class="text-center" style="margin:30px;">
+    <p style="color:red;">該当はありません</p></div>
+  <% end %>
+  <% if @model == 'client' %>
+    <%= render 'admin/clients/index', clients: @records %>
+  <% else %>
+    <%= render 'admin/items/index', items: @records %>
+  <% end %>
+ </div>
+</div>
