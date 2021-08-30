@@ -31,7 +31,7 @@ DMMWEBCAMP/2ヶ月目のチーム開発課題。</br>
 ・Ruby2.6.3</br>
 ・Rails5.2.6</br>
 ・HTML5</br>
-・CSS3
+・CSS
 
 ## Gem
 ・devise</br>
